@@ -1,0 +1,1462 @@
+[ 2015-11-10T21:24:29+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000076s ]
+INFO: [ app_init ] --END-- [ RunTime:0.029367s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002273s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002784s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.5134s ]
+SQL: SELECT `NAME` FROM `think_name`  [ RunTime:0.0078s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001464s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001850s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033959s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034518s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002636s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003291s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001391s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001701s ]
+
+[ 2015-11-10T21:24:29+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&_=1447161869853
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000066s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000899s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001286s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001536s ]
+ERR: 非法操作:getDayList
+
+[ 2015-11-10T21:24:37+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&date=2015-11-09&_=1447161877197
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001148s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000725s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000890s ]
+ERR: 非法操作:getDayList
+
+[ 2015-11-10T21:24:38+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&date=2015-11-08&_=1447161878931
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000807s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000721s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000928s ]
+ERR: 非法操作:getDayList
+
+[ 2015-11-10T21:24:43+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&date=2015-11-07&_=1447161883030
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000991s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000769s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000949s ]
+ERR: 非法操作:getDayList
+
+[ 2015-11-10T21:24:45+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&date=2015-11-10&_=1447161885199
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001016s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002246s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002486s ]
+ERR: 非法操作:getDayList
+
+[ 2015-11-10T21:24:46+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000662s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000748s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000924s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0052s ]
+SQL: SELECT `NAME` FROM `think_name`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000218s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000402s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012711s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012983s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001097s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001410s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001298s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001671s ]
+
+[ 2015-11-10T21:24:47+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&_=1447161887256
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000620s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000917s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001122s ]
+ERR: 非法操作:getDayList
+
+[ 2015-11-10T21:25:54+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000512s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000883s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0036s ]
+SQL: SELECT `NAME` FROM `think_name`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000165s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000328s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013284s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013543s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001270s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001834s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002140s ]
+
+[ 2015-11-10T21:25:54+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&_=1447161954616
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000702s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000868s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001009s ]
+ERR: 非法操作:getDayList
+
+[ 2015-11-10T21:25:56+08:00 ] ::1 /PlanB/index.php/Home/Index/getStorage?start=0&limit=10&pageIndex=0&_=1447161956796
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000514s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001199s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001510s ]
+ERR: 非法操作:getStorage
+
+[ 2015-11-10T21:26:22+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000646s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001070s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001252s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0042s ]
+SQL: SELECT `NAME` FROM `think_name`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000197s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000355s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013135s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013330s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001010s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001237s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001369s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001679s ]
+
+[ 2015-11-10T21:26:22+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&_=1447161982701
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000666s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000868s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001004s ]
+ERR: 非法操作:getDayList
+
+[ 2015-11-10T21:26:32+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000617s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000911s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001092s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0174s ]
+SQL: SELECT `NAME` FROM `think_name`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000161s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000346s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010789s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011134s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000997s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001203s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001538s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001892s ]
+
+[ 2015-11-10T21:26:33+08:00 ] ::1 /PlanB/index.php/Home/index/getAll?start=0&limit=100&pageIndex=0&_=1447161992821
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000573s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000939s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001095s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0049s ]
+SQL: SELECT `ID`,`NAME`,`QUANTITY`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-10' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0890s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-10' LIMIT 1   [ RunTime:0.0342s ]
+
+[ 2015-11-10T21:26:33+08:00 ] ::1 /PlanB/index.php/Home/index/getOne?start=0&limit=10&pageIndex=0&_=1447161992941
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000609s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001720s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0042s ]
+SQL: SELECT `ID`,`NAME`,`QUANTITY`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `NAME` = '' ORDER BY DATE desc LIMIT 0,10   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `NAME` = '' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2015-11-10T21:44:04+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000688s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001865s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002163s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0050s ]
+SQL: SELECT `NAME` FROM `think_name`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000153s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000313s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010579s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010833s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000944s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001132s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001282s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001549s ]
+
+[ 2015-11-10T21:44:04+08:00 ] ::1 /PlanB/index.php/Home/index/getAll?start=0&limit=100&pageIndex=0&_=1447163044943
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000972s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001116s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0053s ]
+SQL: SELECT `ID`,`NAME`,`QUANTITY`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-10' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-10' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2015-11-10T21:44:05+08:00 ] ::1 /PlanB/index.php/Home/index/getOne?start=0&limit=10&pageIndex=0&_=1447163045089
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000700s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001254s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001464s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0131s ]
+SQL: SELECT `ID`,`NAME`,`QUANTITY`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `NAME` = '' ORDER BY DATE desc LIMIT 0,10   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `NAME` = '' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2015-11-10T21:45:12+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000688s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000837s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0047s ]
+SQL: SELECT `NAME` FROM `think_name`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000138s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000299s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012720s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012969s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000768s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000979s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001240s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001517s ]
+
+[ 2015-11-10T21:45:12+08:00 ] ::1 /PlanB/index.php/Home/index/getAll?start=0&limit=100&pageIndex=0&_=1447163112849
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000742s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001199s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001416s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0051s ]
+SQL: SELECT `ID`,`NAME`,`QUANTITY`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-10' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-10' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2015-11-10T21:45:13+08:00 ] ::1 /PlanB/index.php/Home/index/getOne?start=0&limit=10&pageIndex=0&_=1447163112971
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001259s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001487s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0053s ]
+SQL: SELECT `ID`,`NAME`,`QUANTITY`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `NAME` = '' ORDER BY DATE desc LIMIT 0,10   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `NAME` = '' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2015-11-10T21:45:22+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000790s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001596s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001929s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0038s ]
+SQL: SELECT `NAME` FROM `think_name`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000137s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000294s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013330s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013560s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001026s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001263s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001965s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002269s ]
+
+[ 2015-11-10T21:45:22+08:00 ] ::1 /PlanB/index.php/Home/index/getAll?start=0&limit=100&pageIndex=0&_=1447163122829
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000818s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000933s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001082s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0067s ]
+SQL: SELECT `ID`,`NAME`,`QUANTITY`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-10' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-10' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2015-11-10T21:45:22+08:00 ] ::1 /PlanB/index.php/Home/index/getOne?start=0&limit=10&pageIndex=0&_=1447163122949
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000069s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001049s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000886s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001056s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0051s ]
+SQL: SELECT `ID`,`NAME`,`QUANTITY`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `NAME` = '' ORDER BY DATE desc LIMIT 0,10   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `NAME` = '' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2015-11-10T21:46:29+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000701s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000980s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001151s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0031s ]
+SQL: SELECT `NAME` FROM `think_name`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000140s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000302s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011794s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012083s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001026s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001207s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001420s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001718s ]
+
+[ 2015-11-10T21:46:29+08:00 ] ::1 /PlanB/index.php/Home/index/getAll?start=0&limit=100&pageIndex=0&_=1447163189437
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001009s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001193s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001407s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0148s ]
+SQL: SELECT `ID`,`NAME`,`QUANTITY`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-10' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-10' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2015-11-10T21:46:29+08:00 ] ::1 /PlanB/index.php/Home/index/getOne?start=0&limit=10&pageIndex=0&_=1447163189559
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000868s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001136s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001338s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0049s ]
+SQL: SELECT `ID`,`NAME`,`QUANTITY`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `NAME` = '' ORDER BY DATE desc LIMIT 0,10   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `NAME` = '' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2015-11-10T21:48:04+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000589s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001073s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001269s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0049s ]
+SQL: SELECT `NAME` FROM `think_name`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000178s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000340s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009699s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009959s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001184s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001476s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001424s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001686s ]
+
+[ 2015-11-10T21:48:04+08:00 ] ::1 /PlanB/index.php/Home/index/getAll?start=0&limit=100&pageIndex=0&_=1447163284719
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001063s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001146s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001391s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0053s ]
+SQL: SELECT `ID`,`NAME`,`QUANTITY`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-10' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-10' LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2015-11-10T21:48:09+08:00 ] ::1 /PlanB/index.php/Home/index/getAll?start=0&limit=100&pageIndex=0&date=2015-11-09&_=1447163289392
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000672s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001167s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001453s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0057s ]
+SQL: SELECT `ID`,`NAME`,`QUANTITY`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-09' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-09' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2015-11-10T21:48:11+08:00 ] ::1 /PlanB/index.php/Home/index/getAll?start=0&limit=100&pageIndex=0&date=2015-11-07&_=1447163291260
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000189s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002212s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001111s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001339s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0073s ]
+SQL: SELECT `ID`,`NAME`,`QUANTITY`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-07' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-07' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2015-11-10T21:48:13+08:00 ] ::1 /PlanB/index.php/Home/index/getAll?start=0&limit=100&pageIndex=0&date=2015-11-06&_=1447163292947
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000531s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000659s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000776s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0038s ]
+SQL: SELECT `ID`,`NAME`,`QUANTITY`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-06' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-06' LIMIT 1   [ RunTime:0.0011s ]
+
+[ 2015-11-10T21:48:14+08:00 ] ::1 /PlanB/index.php/Home/index/getAll?start=0&limit=100&pageIndex=0&date=2015-11-08&_=1447163294739
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001148s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000725s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000872s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0032s ]
+SQL: SELECT `ID`,`NAME`,`QUANTITY`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-08' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-08' LIMIT 1   [ RunTime:0.0569s ]
+
+[ 2015-11-10T21:48:16+08:00 ] ::1 /PlanB/index.php/Home/Index/getList?start=0&limit=10&pageIndex=0&name=%E6%B5%8B%E8%AF%95&_=1447163296281
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000073s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001200s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001078s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001310s ]
+ERR: 非法操作:getList
+
+[ 2015-11-10T21:52:07+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000075s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000635s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000894s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001094s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0030s ]
+SQL: SELECT `NAME` FROM `think_name`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000181s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000338s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014658s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014928s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000883s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001090s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001424s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001714s ]
+
+[ 2015-11-10T21:52:07+08:00 ] ::1 /PlanB/index.php/Home/index/getAll?start=0&limit=100&pageIndex=0&_=1447163527534
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001024s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001232s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0044s ]
+SQL: SELECT `ID`,`NAME`,`QUANTITY`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-10' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-10' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2015-11-10T21:52:10+08:00 ] ::1 /PlanB/index.php/Home/index/getAll?start=0&limit=100&pageIndex=0&date=2015-11-09&_=1447163530385
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000644s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000998s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001277s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0075s ]
+SQL: SELECT `ID`,`NAME`,`QUANTITY`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-09' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-09' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2015-11-10T21:52:11+08:00 ] ::1 /PlanB/index.php/Home/index/getAll?start=0&limit=100&pageIndex=0&date=2015-11-08&_=1447163531911
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000806s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002353s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002568s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0038s ]
+SQL: SELECT `ID`,`NAME`,`QUANTITY`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-08' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-08' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2015-11-10T21:52:12+08:00 ] ::1 /PlanB/index.php/Home/Index/getList?start=0&limit=10&pageIndex=0&name=%E6%B5%8B%E8%AF%95&_=1447163532863
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000065s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001056s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000855s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001036s ]
+ERR: 非法操作:getList
+
+[ 2015-11-10T21:52:20+08:00 ] ::1 /PlanB/index.php/Home/Index/getStorage?start=0&limit=10&pageIndex=0&_=1447163540166
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000483s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000757s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000877s ]
+ERR: 非法操作:getStorage
+
+[ 2015-11-10T21:52:24+08:00 ] ::1 /PlanB/index.php/Home/Index/getList?start=0&limit=10&pageIndex=0&name=%E6%B5%8B%E8%AF%95&_=1447163544764
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000998s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001635s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001941s ]
+ERR: 非法操作:getList
+
+[ 2015-11-10T21:52:28+08:00 ] ::1 /PlanB/index.php/Home/Index/getList?start=0&limit=10&pageIndex=0&name=%E6%B5%8B%E8%AF%95&_=1447163548092
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000074s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001341s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001059s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001232s ]
+ERR: 非法操作:getList
+
+[ 2015-11-10T21:52:29+08:00 ] ::1 /PlanB/index.php/Home/Index/getStorage?start=0&limit=10&pageIndex=0&_=1447163549832
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000564s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001367s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001598s ]
+ERR: 非法操作:getStorage
+
+[ 2015-11-10T21:52:32+08:00 ] ::1 /PlanB/index.php/Home/Index/getStorage?start=0&limit=10&pageIndex=0&_=1447163552930
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000565s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000899s ]
+ERR: 非法操作:getStorage
+
+[ 2015-11-10T21:52:56+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000810s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000967s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0034s ]
+SQL: SELECT `NAME` FROM `think_name`  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000170s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000321s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012121s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012372s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000949s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001650s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001964s ]
+
+[ 2015-11-10T21:52:57+08:00 ] ::1 /PlanB/index.php/Home/index/getAll?start=0&limit=100&pageIndex=0&_=1447163577272
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000816s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001155s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001385s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0041s ]
+SQL: SELECT `ID`,`NAME`,`QUANTITY`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-10' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-10' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2015-11-10T21:52:57+08:00 ] ::1 /PlanB/index.php/Home/Index/getStorage?start=0&limit=10&pageIndex=0&_=1447163577389
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000645s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001287s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001518s ]
+ERR: 非法操作:getStorage
+
+[ 2015-11-10T21:52:58+08:00 ] ::1 /PlanB/index.php/Home/Index/getStorage?start=0&limit=10&pageIndex=0&_=1447163578537
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000582s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000858s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000993s ]
+ERR: 非法操作:getStorage
+
+[ 2015-11-10T21:53:03+08:00 ] ::1 /PlanB/index.php/Home/Index/getStorage?start=0&limit=10&pageIndex=0&_=1447163583207
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000943s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001057s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001205s ]
+ERR: 非法操作:getStorage
+
+[ 2015-11-10T21:53:05+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000924s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000905s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001084s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0049s ]
+SQL: SELECT `NAME` FROM `think_name`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000177s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000329s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009871s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010129s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001196s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001437s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001455s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001752s ]
+
+[ 2015-11-10T21:53:06+08:00 ] ::1 /PlanB/index.php/Home/index/getAll?start=0&limit=100&pageIndex=0&_=1447163586099
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000660s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000807s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000939s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0042s ]
+SQL: SELECT `ID`,`NAME`,`QUANTITY`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-10' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-10' LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2015-11-10T21:53:06+08:00 ] ::1 /PlanB/index.php/Home/Index/getStorage?start=0&limit=10&pageIndex=0&_=1447163586210
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000953s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001370s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001631s ]
+ERR: 非法操作:getStorage
+
+[ 2015-11-10T21:53:07+08:00 ] ::1 /PlanB/index.php/Home/Index/getStorage?start=0&limit=10&pageIndex=0&_=1447163587111
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001548s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001294s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001539s ]
+ERR: 非法操作:getStorage
+
+[ 2015-11-10T21:53:31+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000602s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000888s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001077s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0032s ]
+SQL: SELECT `NAME` FROM `think_name`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000183s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000349s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009365s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009610s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000922s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001205s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001504s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001794s ]
+
+[ 2015-11-10T21:53:31+08:00 ] ::1 /PlanB/index.php/Home/index/getAll?start=0&limit=100&pageIndex=0&_=1447163611666
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000602s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001519s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001854s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0044s ]
+SQL: SELECT `ID`,`NAME`,`QUANTITY`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-10' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-10' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2015-11-10T21:53:31+08:00 ] ::1 /PlanB/index.php/Home/Index/getList?start=0&limit=10&pageIndex=0&_=1447163611788
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001174s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001374s ]
+ERR: 非法操作:getList
+
+[ 2015-11-10T21:53:31+08:00 ] ::1 /PlanB/index.php/Home/Index/getStorage?start=0&limit=10&pageIndex=0&_=1447163611795
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000068s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001593s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001614s ]
+ERR: 非法操作:getStorage
+
+[ 2015-11-10T21:53:32+08:00 ] ::1 /PlanB/index.php/Home/Index/getStorage?start=0&limit=10&pageIndex=0&_=1447163612849
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000589s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001647s ]
+ERR: 非法操作:getStorage
+
+[ 2015-11-10T21:53:36+08:00 ] ::1 /PlanB/index.php/Home/index/getAll?start=0&limit=100&pageIndex=0&date=2015-11-08&_=1447163616218
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000864s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000974s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001181s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0034s ]
+SQL: SELECT `ID`,`NAME`,`QUANTITY`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-08' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-08' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2015-11-10T21:53:37+08:00 ] ::1 /PlanB/index.php/Home/Index/getList?start=0&limit=10&pageIndex=0&name=%E6%B5%8B%E8%AF%95&_=1447163617002
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000107s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001296s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000881s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001025s ]
+ERR: 非法操作:getList
+
+[ 2015-11-10T21:53:40+08:00 ] ::1 /PlanB/index.php/Home/Index/getList?start=0&limit=10&pageIndex=0&name=%E6%B5%8B%E8%AF%95&_=1447163620155
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000069s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001055s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001557s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001825s ]
+ERR: 非法操作:getList
+
+[ 2015-11-10T21:55:44+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000501s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000759s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000896s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0031s ]
+SQL: SELECT `NAME` FROM `think_name`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000193s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000356s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014450s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014662s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000807s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000970s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001533s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001833s ]
+
+[ 2015-11-10T21:55:45+08:00 ] ::1 /PlanB/index.php/Home/index/getAll?start=0&limit=100&pageIndex=0&_=1447163745164
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000629s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000875s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001017s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0048s ]
+SQL: SELECT `ID`,`NAME`,`QUANTITY`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-10' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-10' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2015-11-10T21:55:54+08:00 ] ::1 /PlanB/index.php/Home/index/getAll?start=0&limit=100&pageIndex=0&date=2015-11-08&_=1447163753975
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000936s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001584s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001913s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0032s ]
+SQL: SELECT `ID`,`NAME`,`QUANTITY`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-08' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-08' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2015-11-10T21:55:56+08:00 ] ::1 /PlanB/index.php/Home/Index/getList?start=0&limit=10&pageIndex=0&name=%E6%B5%8B%E8%AF%95&_=1447163756166
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000065s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000802s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001210s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001452s ]
+ERR: 非法操作:getList
+
+[ 2015-11-10T21:59:50+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001564s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000804s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000972s ]
+
+[ 2015-11-10T22:00:14+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001016s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001656s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002013s ]
+
+[ 2015-11-10T22:00:59+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000068s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001229s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001132s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001450s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000172s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000325s ]
+NOTIC: [8] Undefined variable: name D:\wamp\www\PlanB\Application\Runtime\Cache\Home\5f5878b563bbd0551b6c84d71156b7e9.php 第 336 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017576s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017752s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000902s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001048s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002151s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002482s ]
+
+[ 2015-11-10T22:01:00+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&_=1447164060424
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000893s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000897s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001044s ]
+
+[ 2015-11-10T22:02:13+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000066s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000792s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001445s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001739s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000285s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000595s ]
+NOTIC: [8] Undefined variable: name D:\wamp\www\PlanB\Application\Runtime\Cache\Home\5f5878b563bbd0551b6c84d71156b7e9.php 第 336 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014920s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015184s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001090s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001397s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001508s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001800s ]
+
+[ 2015-11-10T22:02:14+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&_=1447164134592
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000784s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001061s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001250s ]
+
+[ 2015-11-10T22:04:48+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000618s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000857s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000994s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000199s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000351s ]
+NOTIC: [8] Undefined variable: name D:\wamp\www\PlanB\Application\Runtime\Cache\Home\5f5878b563bbd0551b6c84d71156b7e9.php 第 336 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012564s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013062s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002413s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002728s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002647s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003081s ]
+
+[ 2015-11-10T22:04:49+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&_=1447164288838
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000978s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001153s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001388s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0061s ]
+ERR: 1054:Unknown column 'COLLECTION' in 'field list'
+ [ SQL语句 ] : SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-09' ORDER BY DATE desc LIMIT 0,100  
+ERR: 1054:Unknown column 'COLLECTION' in 'field list'
+ [ SQL语句 ] : SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-09' ORDER BY DATE desc LIMIT 0,100  
+
+[ 2015-11-10T22:07:14+08:00 ] ::1 /PlanB/index.php/Home/Index/getStorage?start=0&limit=10&pageIndex=0&_=1447164434084
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000657s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001103s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001363s ]
+ERR: Think\Controller:getStorageData方法不存在！
+
+[ 2015-11-10T22:08:46+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000070s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000891s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001239s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000186s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000364s ]
+NOTIC: [8] Undefined variable: name D:\wamp\www\PlanB\Application\Runtime\Cache\Home\5f5878b563bbd0551b6c84d71156b7e9.php 第 336 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011672s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011909s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001633s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002047s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005453s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005964s ]
+
+[ 2015-11-10T22:08:47+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&_=1447164527549
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000639s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001270s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001517s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0047s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-09' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-09' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2015-11-10T22:08:53+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&date=2015-11-08&_=1447164533573
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000912s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001603s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001934s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0035s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-08' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-08' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2015-11-10T22:08:57+08:00 ] ::1 /PlanB/index.php/Home/Index/getStorage?start=0&limit=10&pageIndex=0&_=1447164535808
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000867s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001060s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001232s ]
+ERR: Think\Controller:getStorageData方法不存在！
+
+[ 2015-11-10T22:10:03+08:00 ] ::1 /PlanB/index.php/Home/Index/getList?start=0&limit=10&pageIndex=0&name=%E6%B5%8B%E8%AF%95&_=1447164603832
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000113s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001103s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001599s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0056s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY`,`NOTE` FROM `think_pool` WHERE `NAME` = '测试' ORDER BY DATE desc LIMIT 0,10   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `NAME` = '测试' LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2015-11-10T22:11:27+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000685s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000918s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000268s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000543s ]
+NOTIC: [8] Undefined variable: name D:\wamp\www\PlanB\Application\Runtime\Cache\Home\5f5878b563bbd0551b6c84d71156b7e9.php 第 330 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015860s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016123s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001501s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001844s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002552s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002921s ]
+
+[ 2015-11-10T22:11:28+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&_=1447164688375
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000067s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000840s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000860s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0045s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-09' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-09' LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2015-11-10T22:12:30+08:00 ] ::1 /PlanB/index.php/Home/Index/getStorage?start=0&limit=10&pageIndex=0&_=1447164750644
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001825s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000946s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001276s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0046s ]
+NOTIC: [8] Undefined variable: where D:\wamp\www\PlanB\Application\Home\Controller\IndexController.class.php 第 66 行.
+SQL: SELECT `NAME`,`COLLECTION`,`STORAGE`,`LASTDAY` FROM `think_name` ORDER BY LASTDAY desc LIMIT 0,10   [ RunTime:0.0009s ]
+NOTIC: [8] Undefined variable: where D:\wamp\www\PlanB\Application\Home\Controller\IndexController.class.php 第 67 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `think_name` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2015-11-10T22:12:53+08:00 ] ::1 /PlanB/index.php/Home/Index/getStorage?start=0&limit=10&pageIndex=0&_=1447164773121
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000529s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001228s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001485s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0038s ]
+NOTIC: [8] Undefined variable: where D:\wamp\www\PlanB\Application\Home\Controller\IndexController.class.php 第 66 行.
+SQL: SELECT `NAME`,`COLLECTION`,`STORAGE`,`LASTDAY` FROM `think_name` ORDER BY LASTDAY desc LIMIT 0,10   [ RunTime:0.0009s ]
+NOTIC: [8] Undefined variable: where D:\wamp\www\PlanB\Application\Home\Controller\IndexController.class.php 第 67 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `think_name` LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2015-11-10T22:13:36+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000701s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001711s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000254s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000495s ]
+NOTIC: [8] Undefined variable: name D:\wamp\www\PlanB\Application\Runtime\Cache\Home\5f5878b563bbd0551b6c84d71156b7e9.php 第 332 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012938s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013178s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002377s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002751s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002356s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002656s ]
+
+[ 2015-11-10T22:13:37+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&_=1447164817475
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000634s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001353s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001640s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0042s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-09' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-09' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2015-11-10T22:14:29+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000581s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000893s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001076s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000191s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000344s ]
+NOTIC: [8] Undefined variable: name D:\wamp\www\PlanB\Application\Runtime\Cache\Home\5f5878b563bbd0551b6c84d71156b7e9.php 第 330 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011228s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011479s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001130s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001341s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001591s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002069s ]
+
+[ 2015-11-10T22:14:30+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&_=1447164870093
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000910s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001213s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001455s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0055s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-09' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-09' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2015-11-10T22:15:26+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000518s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000759s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000932s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000172s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000334s ]
+NOTIC: [8] Undefined variable: name D:\wamp\www\PlanB\Application\Runtime\Cache\Home\5f5878b563bbd0551b6c84d71156b7e9.php 第 330 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013514s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013738s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001032s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001344s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002879s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003182s ]
+
+[ 2015-11-10T22:15:27+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&_=1447164927306
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001068s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001338s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001542s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0054s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-09' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-09' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2015-11-10T22:16:45+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000584s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001243s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001435s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000205s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000400s ]
+NOTIC: [8] Undefined variable: name D:\wamp\www\PlanB\Application\Runtime\Cache\Home\5f5878b563bbd0551b6c84d71156b7e9.php 第 330 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011806s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012077s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001498s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001825s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001581s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001890s ]
+
+[ 2015-11-10T22:16:45+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&_=1447165005503
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001772s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001311s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001550s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0059s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-09' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-09' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2015-11-10T22:17:33+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000999s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001005s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001276s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000215s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000409s ]
+NOTIC: [8] Undefined variable: name D:\wamp\www\PlanB\Application\Runtime\Cache\Home\5f5878b563bbd0551b6c84d71156b7e9.php 第 324 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013654s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013865s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002068s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002362s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001479s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002050s ]
+
+[ 2015-11-10T22:17:33+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&_=1447165053830
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000962s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001287s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001536s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0054s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-09' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-09' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2015-11-10T22:17:38+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&date=2015-11-08&_=1447165058304
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000081s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001008s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002906s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003570s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0039s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-08' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-08' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2015-11-10T22:17:39+08:00 ] ::1 /PlanB/index.php/Home/Index/getList?start=0&limit=10&pageIndex=0&name=%E6%B5%8B%E8%AF%95&_=1447165058970
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000064s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000956s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000941s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001096s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0041s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY`,`NOTE` FROM `think_pool` WHERE `NAME` = '测试' ORDER BY DATE desc LIMIT 0,10   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `NAME` = '测试' LIMIT 1   [ RunTime:0.0011s ]
+
+[ 2015-11-10T22:17:41+08:00 ] ::1 /PlanB/index.php/Home/Index/getStorage?start=0&limit=10&pageIndex=0&_=1447165061578
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000941s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000739s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000894s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0035s ]
+NOTIC: [8] Undefined variable: where D:\wamp\www\PlanB\Application\Home\Controller\IndexController.class.php 第 66 行.
+SQL: SELECT `NAME`,`COLLECTION`,`STORAGE`,`LASTDAY` FROM `think_name` ORDER BY LASTDAY desc LIMIT 0,10   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: where D:\wamp\www\PlanB\Application\Home\Controller\IndexController.class.php 第 67 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `think_name` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2015-11-10T22:18:44+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000783s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000784s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000951s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000201s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000398s ]
+NOTIC: [8] Undefined variable: name D:\wamp\www\PlanB\Application\Runtime\Cache\Home\5f5878b563bbd0551b6c84d71156b7e9.php 第 326 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013341s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013536s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000909s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001166s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001438s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001767s ]
+
+[ 2015-11-10T22:18:45+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&_=1447165125260
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000888s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001196s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001465s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0046s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-09' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-09' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2015-11-10T22:21:38+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001253s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001514s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000179s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000327s ]
+NOTIC: [8] Undefined variable: name D:\wamp\www\PlanB\Application\Runtime\Cache\Home\5f5878b563bbd0551b6c84d71156b7e9.php 第 327 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014693s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014923s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001147s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001350s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002472s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002824s ]
+
+[ 2015-11-10T22:21:38+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&_=1447165298904
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000560s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000886s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001025s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0052s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-09' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-09' LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2015-11-10T22:23:29+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000533s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000975s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001154s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000184s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000341s ]
+NOTIC: [8] Undefined variable: name D:\wamp\www\PlanB\Application\Runtime\Cache\Home\5f5878b563bbd0551b6c84d71156b7e9.php 第 327 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013799s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013980s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001018s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001193s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001283s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001621s ]
+
+[ 2015-11-10T22:23:30+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&_=1447165410051
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000064s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001096s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000871s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001018s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0052s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-09' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-09' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2015-11-10T22:25:41+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000527s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001328s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001582s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000336s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001105s ]
+NOTIC: [8] Undefined variable: name D:\wamp\www\PlanB\Application\Runtime\Cache\Home\5f5878b563bbd0551b6c84d71156b7e9.php 第 330 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019630s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019875s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001009s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001303s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001451s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001855s ]
+
+[ 2015-11-10T22:25:42+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&_=1447165542455
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000698s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001478s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001693s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0042s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-09' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-09' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2015-11-10T22:26:06+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000783s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000829s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001045s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000292s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000556s ]
+NOTIC: [8] Undefined variable: name D:\wamp\www\PlanB\Application\Runtime\Cache\Home\5f5878b563bbd0551b6c84d71156b7e9.php 第 330 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011049s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011209s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000810s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001046s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001321s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001883s ]
+
+[ 2015-11-10T22:26:07+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&_=1447165567478
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000805s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001197s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001423s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0044s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-09' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-09' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2015-11-10T22:26:21+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000826s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001368s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001672s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000195s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000357s ]
+NOTIC: [8] Undefined variable: name D:\wamp\www\PlanB\Application\Runtime\Cache\Home\5f5878b563bbd0551b6c84d71156b7e9.php 第 330 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013400s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013647s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001635s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001981s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002205s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002576s ]
+
+[ 2015-11-10T22:26:22+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?start=0&limit=100&pageIndex=0&_=1447165582333
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001037s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001300s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001527s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0045s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-09' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-09' LIMIT 1   [ RunTime:0.0005s ]
+

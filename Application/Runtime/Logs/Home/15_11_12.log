@@ -1,0 +1,338 @@
+[ 2015-11-12T20:05:49+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.091110s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.125123s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.125296s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0562s ]
+SQL: SELECT `name` FROM `think_name`  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `think_collection` [ RunTime:0.0048s ]
+SQL: SELECT `ID`,`NAME` FROM `think_collection`  [ RunTime:0.0015s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_collection` LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000239s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000433s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.413852s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.414183s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.067984s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.068143s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.113417s ]
+INFO: [ app_end ] --END-- [ RunTime:0.113604s ]
+
+[ 2015-11-12T20:05:51+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?collection=%E5%85%A8%E9%83%A8&start=0&limit=100&pageIndex=0&_=1447329951790
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001027s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001784s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0371s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-11' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-11' LIMIT 1   [ RunTime:0.0012s ]
+
+[ 2015-11-12T20:11:00+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000613s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001518s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001746s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0037s ]
+SQL: SELECT `name` FROM `think_name`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `think_collection` [ RunTime:0.0037s ]
+SQL: SELECT `ID`,`NAME` FROM `think_collection`  [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_collection` LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000264s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000465s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030172s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030413s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000953s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001163s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001302s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001549s ]
+
+[ 2015-11-12T20:11:00+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?collection=%E5%85%A8%E9%83%A8&start=0&limit=100&pageIndex=0&_=1447330260814
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001018s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001165s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0046s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-11' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-11' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2015-11-12T20:11:17+08:00 ] ::1 /PlanB/index.php/Home/Index/addRecord?name=%E6%B5%8B%E8%AF%95&collection=%E6%B5%8B%E8%AF%95&amount=10&date=2015-11-12&action=%E5%85%A5%E5%BA%93&note=78&_=1447330277390
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000080s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001058s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001589s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001860s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `think_name` WHERE `NAME` = '测试' LIMIT 1   [ RunTime:0.0007s ]
+SQL: UPDATE `think_name` SET `LASTDAY`='2015-11-12',`STORAGE`='20' WHERE `NAME` = '测试' [ RunTime:0.0198s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `think_pool` WHERE `NAME` = '测试' AND `DATE` = '2015-11-12' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `think_pool` WHERE `NAME` = '测试' ORDER BY DATE desc LIMIT 1   [ RunTime:0.0005s ]
+SQL: INSERT INTO `think_pool` (`NAME`,`COLLECTION`,`DATE`,`NOTE`,`INPUT`,`OUTPUT`,`SUMMARY`) VALUES ('测试','测试','2015-11-12','78','10','0','20') [ RunTime:0.0130s ]
+
+[ 2015-11-12T20:11:18+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?collection=%E5%85%A8%E9%83%A8&start=0&limit=100&pageIndex=0&date=2015-11-12&_=1447330278738
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000844s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000919s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001086s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0038s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-12' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-12' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2015-11-12T20:11:25+08:00 ] ::1 /PlanB/index.php/Home/Index/getStorage?start=0&limit=10&pageIndex=0&_=1447330285903
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000495s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000700s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000821s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0036s ]
+SQL: SELECT `NAME`,`COLLECTION`,`STORAGE`,`LASTDAY` FROM `think_name` ORDER BY LASTDAY desc LIMIT 0,10   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_name` LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2015-11-12T20:11:32+08:00 ] ::1 /PlanB/index.php/Home/Index/getList?start=0&limit=10&pageIndex=0&name=%E6%B5%8B%E8%AF%95&_=1447330292667
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000559s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001410s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001676s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0038s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY`,`NOTE` FROM `think_pool` WHERE `NAME` = '测试' ORDER BY DATE desc LIMIT 0,10   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `NAME` = '测试' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2015-11-12T20:11:50+08:00 ] ::1 /PlanB/index.php/Home/Index/getList?start=0&limit=10&pageIndex=0&name=%E6%B5%8B%E8%AF%95&_=1447330310090
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000102s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003387s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002732s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0037s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY`,`NOTE` FROM `think_pool` WHERE `NAME` = '测试' ORDER BY DATE desc LIMIT 0,10   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `NAME` = '测试' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2015-11-12T20:11:54+08:00 ] ::1 /PlanB/index.php/Home/Index/getStorage?start=0&limit=10&pageIndex=0&_=1447330314589
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000629s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000811s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000935s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0037s ]
+SQL: SELECT `NAME`,`COLLECTION`,`STORAGE`,`LASTDAY` FROM `think_name` ORDER BY LASTDAY desc LIMIT 0,10   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_name` LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2015-11-12T20:11:56+08:00 ] ::1 /PlanB/index.php/Home/Index/getList?start=0&limit=10&pageIndex=0&name=%E6%B5%8B%E8%AF%95&_=1447330316937
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000609s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002446s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0036s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY`,`NOTE` FROM `think_pool` WHERE `NAME` = '测试' ORDER BY DATE desc LIMIT 0,10   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `NAME` = '测试' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2015-11-12T20:12:22+08:00 ] ::1 /PlanB/index.php/Home/Index/getStorage?start=0&limit=10&pageIndex=0&_=1447330342089
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000939s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001077s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0037s ]
+SQL: SELECT `NAME`,`COLLECTION`,`STORAGE`,`LASTDAY` FROM `think_name` ORDER BY LASTDAY desc LIMIT 0,10   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_name` LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2015-11-12T20:12:27+08:00 ] ::1 /PlanB/index.php/Home/Index/getList?start=0&limit=10&pageIndex=0&name=%E6%B5%8B%E8%AF%95&_=1447330347269
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000065s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000786s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001364s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001622s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0032s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY`,`NOTE` FROM `think_pool` WHERE `NAME` = '测试' ORDER BY DATE desc LIMIT 0,10   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `NAME` = '测试' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2015-11-12T20:13:44+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000546s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001157s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001478s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0038s ]
+SQL: SELECT `name` FROM `think_name`  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `think_collection` [ RunTime:0.0031s ]
+SQL: SELECT `ID`,`NAME` FROM `think_collection`  [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_collection` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000280s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000462s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.055489s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.055689s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.013853s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.014064s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.013624s ]
+INFO: [ app_end ] --END-- [ RunTime:0.013882s ]
+
+[ 2015-11-12T20:13:44+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?collection=%E5%85%A8%E9%83%A8&start=0&limit=100&pageIndex=0&_=1447330424499
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000622s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000868s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001063s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0042s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-11' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-11' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2015-11-12T20:13:45+08:00 ] ::1 /PlanB/index.php/Home/Index/getList?start=0&limit=10&pageIndex=0&name=%E6%B5%8B%E8%AF%95&_=1447330425485
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000839s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001605s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0043s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY`,`NOTE` FROM `think_pool` WHERE `NAME` = '测试' ORDER BY DATE desc LIMIT 0,10   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `NAME` = '测试' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2015-11-12T20:18:07+08:00 ] ::1 /PlanB/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000773s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001461s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001812s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0044s ]
+SQL: SELECT `name` FROM `think_name`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `think_collection` [ RunTime:0.0037s ]
+SQL: SELECT `ID`,`NAME` FROM `think_collection`  [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_collection` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000241s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000397s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019147s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019374s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001063s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001294s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002387s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002690s ]
+
+[ 2015-11-12T20:18:08+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?collection=%E5%85%A8%E9%83%A8&start=0&limit=100&pageIndex=0&_=1447330688078
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000558s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001257s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001485s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0051s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-11' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-11' LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2015-11-12T20:18:09+08:00 ] ::1 /PlanB/index.php/Home/Index/getList?start=0&limit=10&pageIndex=0&name=%E6%B5%8B%E8%AF%95&_=1447330689359
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000691s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001017s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001206s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0045s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY`,`NOTE` FROM `think_pool` WHERE `NAME` = '测试' ORDER BY DATE desc LIMIT 0,10   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `NAME` = '测试' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2015-11-12T20:18:21+08:00 ] ::1 /PlanB/index.php/Home/Index/addRecord?name=%E6%B5%8B%E8%AF%95&collection=%E6%B5%8B%E8%AF%95&amount=20&date=2015-11-12&action=%E5%85%A5%E5%BA%93&note=56&_=1447330700835
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000071s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001172s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000985s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001138s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `think_name` WHERE `NAME` = '测试' LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `think_name` SET `LASTDAY`='2015-11-12',`STORAGE`='40' WHERE `NAME` = '测试' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `think_pool` WHERE `NAME` = '测试' AND `DATE` = '2015-11-12' LIMIT 1   [ RunTime:0.0008s ]
+SQL: UPDATE `think_pool` SET `COLLECTION`='测试',`INPUT`='30',`OUTPUT`='0',`SUMMARY`='40',`NOTE`='56' WHERE `NAME` = '测试' AND `DATE` = '2015-11-12' [ RunTime:0.1309s ]
+
+[ 2015-11-12T20:18:22+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?collection=%E5%85%A8%E9%83%A8&start=0&limit=100&pageIndex=0&date=2015-11-12&_=1447330702587
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000933s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001950s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002201s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0044s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-12' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-12' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2015-11-12T20:18:25+08:00 ] ::1 /PlanB/index.php/Home/Index/getStorage?start=0&limit=10&pageIndex=0&_=1447330705786
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000167s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001589s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001206s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001463s ]
+SQL: SHOW COLUMNS FROM `think_name` [ RunTime:0.0042s ]
+SQL: SELECT `NAME`,`COLLECTION`,`STORAGE`,`LASTDAY` FROM `think_name` ORDER BY LASTDAY desc LIMIT 0,10   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_name` LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2015-11-12T20:18:29+08:00 ] ::1 /PlanB/index.php/Home/Index/getList?start=0&limit=10&pageIndex=0&name=%E6%B5%8B%E8%AF%95&_=1447330709150
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000072s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001072s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001767s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0050s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY`,`NOTE` FROM `think_pool` WHERE `NAME` = '测试' ORDER BY DATE desc LIMIT 0,10   [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `NAME` = '测试' LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2015-11-12T20:18:53+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?collection=%E5%85%A8%E9%83%A8&start=0&limit=100&pageIndex=0&date=2015-11-11&_=1447330733457
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000911s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001108s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001371s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0033s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-11' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-11' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2015-11-12T20:18:56+08:00 ] ::1 /PlanB/index.php/Home/Index/getDayList?collection=%E5%85%A8%E9%83%A8&start=0&limit=100&pageIndex=0&date=2015-11-12&_=1447330736339
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000231s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001795s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000974s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001173s ]
+SQL: SHOW COLUMNS FROM `think_pool` [ RunTime:0.0037s ]
+SQL: SELECT `NAME`,`COLLECTION`,`DATE`,`INPUT`,`OUTPUT`,`SUMMARY` FROM `think_pool` WHERE `DATE` = '2015-11-12' ORDER BY DATE desc LIMIT 0,100   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_pool` WHERE `DATE` = '2015-11-12' LIMIT 1   [ RunTime:0.0014s ]
+

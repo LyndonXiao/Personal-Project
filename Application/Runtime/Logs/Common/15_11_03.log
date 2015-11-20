@@ -1,0 +1,12 @@
+[ 2015-11-03T21:09:29+08:00 ] ::1 /PlanB/index.php/getone
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000659s ]
+ERR: 无法加载模块:Getone
+
+[ 2015-11-03T21:35:08+08:00 ] ::1 /PlanB/index.php/index.php/Home/Index/getone?_=1446557708854
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001119s ]
+ERR: 无法加载模块:Index.php
+
