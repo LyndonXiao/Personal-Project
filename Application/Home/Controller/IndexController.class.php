@@ -49,12 +49,6 @@ class IndexController extends Controller {
         }
     }
 
-    public function getDayList()
-    {
-        $data = $this->getDayData();
-        $this->ajaxReturn($data);
-    }
-
     public function getList()
     {
         $data = $this->getListData();
@@ -85,26 +79,6 @@ class IndexController extends Controller {
 	}
 
 	//数据库操作区
-	public function getDayData()
-    {
-        $date = I('get.date');
-        $collection = I('get.collection');
-        if (!$date) {
-            $date = date("Y-m-d", strtotime("-1 day"));
-        }
-        if ($collection !== "全部") {
-            $where ['COLLECTION'] = $collection;
-        }
-        $where ['DATE'] = $date;
-        $start = intval(I("get.start"));
-        $length = intval(I("get.limit"));
-        $data = array();
-        $field = 'NAME,COLLECTION,DATE,INPUT,OUTPUT,SUMMARY';
-        $data["rows"] = M('Pool')->field($field)->where($where)->limit($start . "," . $length)->order('DATE desc')->select();
-        $data["results"] = M('Pool')->field($field)->where($where)->count();
-        return $data;
-    }
-
     public function getListData()
     {
         $where ['NAME'] = I('get.name');
@@ -125,14 +99,24 @@ class IndexController extends Controller {
         $start = intval(I("get.start"));
         $length = intval(I("get.limit"));
         $data = array();
+        $collection = I('get.collection');
         $field = 'NAME,COLLECTION,STORAGE,LASTDAY';
         if(I('get.name')){
-            $where['NAME'] = I('get.name').;
-            $data["rows"] = M('Name')->field($field)->limit($start . "," . $length)->where($where)->order('LASTDAY desc')->select();
+            if ($collection !== "全部") {
+                $where['COLLECTION'] = $collection;
+            }
+            $where['NAME'] = array('LIKE', "%".I('get.name')."%");
+            $data["rows"] = M('Name')->field($field)->limit($start . "," . $length)->where($where)->order('COLLECTION, NAME, LASTDAY desc')->select();
             $data["results"] = M('Name')->field($field)->count();
-        }else{
-            $data["rows"] = M('Name')->field($field)->limit($start . "," . $length)->order('LASTDAY desc')->select();
-            $data["results"] = M('Name')->field($field)->count();
+        }else {
+            if ($collection !== "全部") {
+                $where['COLLECTION'] = $collection;
+                $data["rows"] = M('Name')->field($field)->limit($start . "," . $length)->where($where)->order('COLLECTION, NAME, LASTDAY desc')->select();
+                $data["results"] = M('Name')->field($field)->count();
+            } else {
+                $data["rows"] = M('Name')->field($field)->limit($start . "," . $length)->order('COLLECTION, NAME, LASTDAY desc')->select();
+                $data["results"] = M('Name')->field($field)->count();
+            }
         }
         return $data;
     }
@@ -166,6 +150,7 @@ class IndexController extends Controller {
         $rawData = I('get.');
         //判断名称是否存在
         $where['NAME'] = $rawData['name'];
+        $where['COLLECTION'] = $rawData['collection'];
         $name = M('Name')->where($where)->limit(1)->find();
         if($name == null){
             //名称不存在
@@ -202,12 +187,12 @@ class IndexController extends Controller {
         //判断是否有当日记录
         $where['DATE'] = $rawData['date'];
         $where['NAME'] = $rawData['name'];
+        $where['COLLECTION'] = $rawData['collection'];
         $res = M('Pool')->where($where)->limit(1)->find();
         if($res !== null){
             //如果有当天记录
             if($rawData['action'] == "入库"){
                 //如果是入库操作
-                $data['COLLECTION'] = $rawData['collection'];
                 $data['INPUT'] = $res['input'] + $rawData['amount'];
                 $data['OUTPUT'] = $res['output'];
                 $data['SUMMARY'] = $res['summary'] + $rawData['amount'];
@@ -221,7 +206,6 @@ class IndexController extends Controller {
                 }
             }else{
                 //如果是出库操作
-                $data['COLLECTION'] = $rawData['collection'];
                 $data['INPUT'] = $res['input'];
                 $data['OUTPUT'] = $res['output'] + $rawData['amount'];
                 $data['SUMMARY'] = $res['summary'] - $rawData['amount'];
@@ -243,6 +227,7 @@ class IndexController extends Controller {
         }else{
             //如果无当天记录
             $where2['NAME'] = $rawData['name'];
+            $where2['COLLECTION'] = $rawData['collection'];
             $res = M('Pool')->where($where2)->order('DATE desc')->limit(1)->find();
             if($res == null){
                 //如果不存在上条记录

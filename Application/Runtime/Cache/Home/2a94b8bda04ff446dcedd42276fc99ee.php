@@ -108,8 +108,16 @@
         <script src="http://g.tbcdn.cn/fi/bui/bui.js"></script>
         <script type="text/javascript">
             $(document).ready(function () {
-            //设置当前日期
-            $('#date').val(GetDateStr(0));
+                //设置当前日期
+                $('#date').val(GetDateStr(0));
+                $('#sname').keydown(function(e){
+                    if(e.keyCode==13){
+                        store.load({
+                            "name": $("#sname").val(),
+                            "collection": $("#collectionpicker").val()
+                        });
+                    }
+                });
             });
         </script>
         <script type="text/javascript">
@@ -416,13 +424,12 @@
             collectiondialog.show();
             collectionstore.load();
         });
-        //响应回到今天按钮
+        //响应搜索按钮
         $('#searchbtn').on('click', function () {
             store.load({
                 "name": $("#sname").val(),
                 "collection": $("#collectionpicker").val()
             });
-            setCookie('sdate',GetDateStr(0),1800);
         });
         </script>
         <!-- script end -->
