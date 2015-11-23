@@ -67,9 +67,8 @@
         </div>
     </div>
     <!-- End -->
-    <div style="margin-bottom: 30px;margin-left: 50px;">
-        <button class="button" onclick="javascript:self.location='/PlanB/index.php/Home/Index/Index'" style="margin-right:30px;">返回</button>
-        <button id="btnStorage" class="button button-warning" style="margin-right: 10px;">查看库存</button>
+    <div style="margin-bottom: 30px;">
+        <button class="button" onclick="javascript:self.location='/PlanB/index.php/Home/Index/Index'" style="margin-right:3%;width: 50px;;">返回</button>
         <span id="detail_name" style="margin-left:15%"></span>
         <span style="float: right;margin-right: 50px;">
         <button id="btnInput" class="button button-primary" style="margin-right: 10px;">入库</button>
@@ -180,80 +179,6 @@
         detailstore.load({
             "name": '<?php echo ($name); ?>'
         });
-
-        //查看库存弹窗
-        var storagecolumns = [
-            {
-                title: '类别',
-                dataIndex: 'collection',
-                elCls: 'center',
-                width: 100
-            },
-            {
-                title: '名称',
-                dataIndex: 'name',
-                elCls: 'center',
-                width: 120
-            },
-            {
-                title: '剩余库存',
-                dataIndex: 'storage',
-                elCls: 'center',
-                width: 150
-            },
-            {
-                title: '最后操作日期',
-                dataIndex: 'lastday',
-                elCls: 'center',
-                width: 100
-            }
-        ];
-
-        var storagestore = new Store({
-            url: '/PlanB/index.php/Home/Index/getStorage',
-            pageSize: 10, // 配置分页数目
-            autoLoad: false
-        }),
-        storagegrid = new Grid.Grid({
-            forceFit: true, // 列宽按百分比自适应
-            columns: storagecolumns,
-            loadMask: true, //加载数据时显示屏蔽层
-            // 顶部工具栏
-            tbar:{
-                        elCls : 'pull-right',
-                        // items:工具栏的项， 可以是按钮(bar-item-button)、 文本(bar-item-text)、 默认(bar-item)、 分隔符(bar-item-separator)以及自定义项 
-                        items:[{
-                        //xclass:'bar-item-button',默认的是按钮
-                        content : '<input name="sname" id="id"/>'
-                }, {
-                    xclass:'bar-item-button',
-                    btnCls : 'button button-small button-primary',
-                    text:'搜索',
-                    listeners : {
-                        click : function(ev){
-                            storagestore.load({
-                                "name":$('[name="sname"]').val()
-                            })
-                        //ev.item,ev.text
-                        }
-                    }
-                }]
-            },
-            // 底部工具栏
-                    bbar: {
-                        pagingBar: {
-                            xclass: 'pagingbar-number'
-                        }
-                    },
-                    store: storagestore,
-                    emptyDataTpl: '<div class="centered"><img alt="Crying" src="/PlanB/Public/Images/norecord.png"><h2>查询的数据不存在</h2></div>'
-                });
-                
-                storagegrid.on('cellclick', function (ev) {
-                    var record = ev.record, //点击行的记录
-                    name = record.name;
-                    self.location = '/PlanB/index.php/Home/Index/detail/name/' + name;
-        });
         </script>
         <!-- script start -->
         <script type="text/javascript">
@@ -329,24 +254,6 @@
             ]
         });
 
-        // 库存弹窗
-        var storagedialog = new Overlay.Dialog({
-            title: '查看库存',
-            width: 900,
-            height: 560,
-            children: [storagegrid],
-            childContainer: '.bui-stdmod-body',
-            buttons: [
-                {
-                    text: '关闭',
-                    elCls: 'button button-primary',
-                    handler: function () {
-                        this.close();
-                    }
-                }
-            ]
-        });
-
         //响应入库按钮
         $('#btnInput').on('click', function () {
             dialog.show();
@@ -361,11 +268,7 @@
             $("#action").val("出库");
             $("#amount").val("");
         });
-        //响应查看库存按钮
-        $('#btnStorage').on('click', function () {
-            storagedialog.show();
-            storagestore.load();
-        });
+
         </script>
         <!-- script end -->
         <script type="text/javascript">
