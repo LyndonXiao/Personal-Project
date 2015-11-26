@@ -51,8 +51,13 @@ class IndexController extends Controller {
 
     public function getList()
     {
-        $data = $this->getListData();
-        $this->ajaxReturn($data);
+        if(I('get.id')){
+            $data = $this->updateListData();
+            $this->ajaxReturn($data);
+        }else{
+            $data = $this->getListData();
+            $this->ajaxReturn($data);
+        }
     }
 
     public function getStorage()
@@ -78,6 +83,10 @@ class IndexController extends Controller {
         $this->ajaxReturn($data);
 	}
 
+    public function delRecord(){
+        $data = $this->delRecordData();
+        $this->ajaxReturn($data);
+    }
 	//数据库操作区
     public function getListData()
     {
@@ -88,12 +97,36 @@ class IndexController extends Controller {
         $start = intval(I("get.start"));
         $length = intval(I("get.limit"));
         $data = array();
-        $field = 'NAME,COLLECTION,DATE,INPUT,OUTPUT,SUMMARY,NOTE,USER';
+        $field = 'ID,NAME,COLLECTION,DATE,INPUT,OUTPUT,SUMMARY,NOTE,USER';
         $data["rows"] = M('Pool')->field($field)->where($where)->limit($start . "," . $length)->order('DATE asc')->select();
         $data["results"] = M('Pool')->field($field)->where($where)->count();
         return $data;
     }
 
+    public function updateListData()
+    {
+        $rawData = I('get.');
+        $where['ID'] = I('get.id');
+        $result = M('Pool')->where($where)->limit(1)->find();
+        $sumInput = $rawData['input'] - $result['input'];
+        $sumOutput = $rawData['output'] - $result['output'];
+        $data['SUMMARY'] = $result['summary'] + $sumInput - $sumOutput;
+        $data['INPUT'] = $rawData['input'];
+        $data['OUTPUT'] = $rawData['output'];
+        $data['NOTE'] = $rawData['note'];
+        $result2 = M('Pool')->where($where)->save($data);
+        $where2['NAME'] = $rawData['name'];
+        $where2['COLLECTION'] = $rawData['collection'];
+        $res = M('Name')->where($where2)->limit(1)->find();
+        $data2['STORAGE'] = $res['storage'] + $data['SUMMARY'] - $result['summary'];
+        $res2 = M('Name')->where($where2)->save($data2);
+        if($result2 && $res2){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+    
     public function getStorageData()
     {
         $start = intval(I("get.start"));
@@ -288,6 +321,23 @@ class IndexController extends Controller {
                     }
                 }
             }
+        }
+    }
+    
+    function delRecordData()
+    {
+        $where['ID'] = I("get.id");
+        $result = M("Pool")->where($where)->limit(1)->find();
+        $where2['NAME'] = $result['name'];
+        $where2['COLLECTION'] = $result['collection'];
+        $result2 = M('Name')->where($where2)->limit(1)->find();
+        $data['STORAGE'] = $result2['storage'] + $result['output'] - $result['input'];
+        $res = M("Name")->where($where2)->limit(1)->save($data);
+        $res2 = M("Pool")->where($where)->delete();
+        if($res2){
+            return 1;
+        }else{
+            return 0;
         }
     }
 }
