@@ -10,8 +10,11 @@
         body {
             background: url('/PlanB/Public/Images/bg.jpg') repeat;
             padding: 20px 50px;
-            ;
             font-size: 1.2em;
+        }
+        
+        a:hover {
+            text-decoration: none;
         }
         
         tfoot tr {
@@ -31,7 +34,7 @@
 <body>
     <!-- 初始隐藏 dialog内容 -->
     <div id="editcontent" class="hide">
-        <form class="form-horizontal">
+        <form class="form-horizontal" style="margin-left:100px;">
             <p>
                 <label>类别：</label>
                 <input name="collection" type="text" readonly>
@@ -43,10 +46,12 @@
             <p>
                 <label>入库：</label>
                 <input name="input" type="text">
+                <a>(可更改)</a>
             </p>
             <p>
                 <label>出库：</label>
                 <input name="output" type="text">
+                <a>(可更改)</a>
             </p>
             <p>
                 <label>日期：</label>
@@ -59,6 +64,7 @@
             <p>
                 <label>备注：</label>
                 <input name="note" type="text">
+                <a>(可更改)</a>
             </p>
         </form>
     </div>
@@ -209,8 +215,8 @@
             contentId : 'editcontent', //设置隐藏的Dialog内容
             triggerCls : 'btn-edit', //触发显示Dialog的样式
             editor : {
-              title : '自定义',
-              width : 600
+              title : '编辑',
+              width : 500
             }
           }),
         

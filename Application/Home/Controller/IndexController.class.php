@@ -102,7 +102,7 @@ class IndexController extends Controller {
         $data["results"] = M('Pool')->field($field)->where($where)->count();
         return $data;
     }
-
+    
     public function updateListData()
     {
         $rawData = I('get.');
@@ -117,9 +117,18 @@ class IndexController extends Controller {
         $result2 = M('Pool')->where($where)->save($data);
         $where2['NAME'] = $rawData['name'];
         $where2['COLLECTION'] = $rawData['collection'];
-        $res = M('Name')->where($where2)->limit(1)->find();
+        $where2['DATE'] = array('GT',$rawData['date']);
+        $result3 = M("Pool")->where($where2)->field("DATE,SUMMARY")->select();
+        foreach($result3 as $key => $value){
+            $data2['SUMMARY'] = $value['summary'] + $sumInput - $sumOutput;
+            $where2['DATE'] = $value['date'];
+            M("Pool")->where($where2)->save($data2);
+        }
+        $where3['NAME'] = $rawData['name'];
+        $where3['COLLECTION'] = $rawData['collection'];
+        $res = M('Name')->where($where3)->limit(1)->find();
         $data2['STORAGE'] = $res['storage'] + $data['SUMMARY'] - $result['summary'];
-        $res2 = M('Name')->where($where2)->save($data2);
+        $res2 = M('Name')->where($where3)->save($data2);
         if($result2 && $res2){
             return 1;
         }else{

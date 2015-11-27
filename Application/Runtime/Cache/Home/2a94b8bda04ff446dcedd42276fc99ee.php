@@ -11,7 +11,7 @@
             background: url('/PlanB/Public/Images/bg.jpg') repeat;
             padding: 20px 50px;
             ;
-            font-size: 100%;
+            font-size: 1.2em;
         }
         
         tfoot tr {
@@ -80,15 +80,15 @@
         <button id="btnInput" class="button button-primary" style="margin-right: 10px;width: 50px;">入库</button>
         <button id="btnOutput" class="button button-success" style="margin-right: 10px;width: 50px;">出库</button>
         <button id="btnCollection" class="button">设置类别</button>
-        <span style="float: right;margin-right: 30px;">
-            <label>类别：</label>
-            <select name="collectionpicker" id="collectionpicker" style="width:100px;margin-right: 20px;">
-                <option value="全部">全部</option>
-                <?php if(is_array($vo2)): $i = 0; $__LIST__ = $vo2;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo2): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo2["name"]); ?>"><?php echo ($vo2["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-            </select>
-            <label>名称：</label>
-            <input type="text" name="sname" id="sname" class="bui-form-field" />
-            <button class='button button-small button-primary' id="searchbtn">搜索</button>
+        <span style="float:right;margin-right:3%;">
+        <label >类别：</label>
+        <select name="collectionpicker" id="collectionpicker" style="width:100px;margin-right: 20px;">
+            <option value="全部">全部</option>
+            <?php if(is_array($vo2)): $i = 0; $__LIST__ = $vo2;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo2): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo2["name"]); ?>"><?php echo ($vo2["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+        </select>
+        <label>名称：</label>
+        <input type="text" name="sname" id="sname" class="bui-form-field" />
+        <button class='button button-small button-primary' id="searchbtn">搜索</button>
         </span>
     </div>
 
@@ -361,6 +361,7 @@
                     elCls: 'button button-primary',
                     handler: function () {
                         this.close();
+                        location.reload();
                     }
                 }
             ]
