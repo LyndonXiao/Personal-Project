@@ -303,9 +303,10 @@
                                     alert("添加成功");
                                     dialog.close();
                                     $("#datepicker").val(GetDateStr(0));
-                                    store.load({
-                                        "date": GetDateStr(0),
-                                        "collection": $("#collectionpicker").val()
+                                    detailstore.load({
+                                        "name": '<?php echo ($name); ?>',
+                                        "year": $('#syear').val(),
+                                        "month": $('#smonth').val()
                                     });
                                     detaildialog.close();
                                 }

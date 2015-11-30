@@ -122,13 +122,35 @@
         </script>
         <script type="text/javascript">
             function GetDateStr(AddDayCount) {
-            var dd = new Date();
-            dd.setDate(dd.getDate() + AddDayCount);//获取AddDayCount天后的日期
-            var y = dd.getFullYear();
-            var m = dd.getMonth() + 1;//获取当前月份的日期
-            var d = dd.getDate();
-            return y + "-" + m + "-" + d;
-        }
+                var dd = new Date();
+                dd.setDate(dd.getDate() + AddDayCount);//获取AddDayCount天后的日期
+                var y = dd.getFullYear();
+                var m = dd.getMonth() + 1;//获取当前月份的日期
+                var d = dd.getDate();
+                return y + "-" + m + "-" + d;
+            }
+
+            function delrow(id){
+                $.ajax({
+                    url: '/PlanB/index.php/Home/Index/delCollection',
+                    data: 'id=' + id,
+                    type: "get",
+                    cache: false,
+                    dataType: 'text',
+                    success: function (data) {
+                        if (data == 0) {
+                            alert("删除失败");
+                        } else {
+                            alert("删除成功");
+                            collectionstore.load();
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        // view("异常！");
+                        alert(XMLHttpRequest.status + "\n" + textStatus + "\n" + errorThrown);
+                    }
+                });
+            }
         </script>
         <!-- script start -->
         <script type="text/javascript">
@@ -219,6 +241,13 @@
                 dataIndex: 'name',
                 elCls: 'center',
                 width: 200
+            },
+            {
+                title : '操作',
+                dataIndex:'e',
+                renderer : function(value,obj){
+                    return '<span class="grid-command" style="margin-left:10px;" onclick="delrow('+obj.id+');">删除</span>'
+                }
             }
         ];
 

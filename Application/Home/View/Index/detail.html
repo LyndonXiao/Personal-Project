@@ -8,7 +8,7 @@
     <link href="/PlanB/Public/Css/bui.css" rel="stylesheet">
     <style>
         body {
-            background: url('/PlanB/Public/Images/bg.jpg') repeat;
+            background: url('__PUBLIC__/Images/bg.jpg') repeat;
             padding: 20px 50px;
             font-size: 1.2em;
         }
@@ -205,7 +205,9 @@
                 width: "25%"
             },
             {
-                title : '操作',dataIndex:'e',renderer : function(value,obj){
+                title : '操作',
+                dataIndex:'e',
+                renderer : function(value,obj){
               return '<span class="grid-command btn-edit">编辑</span><span class="grid-command" style="margin-left:10px;" onclick="delrow('+obj.id+');">删除</span>'
                 }
             }
@@ -305,9 +307,10 @@
                                     alert("添加成功");
                                     dialog.close();
                                     $("#datepicker").val(GetDateStr(0));
-                                    store.load({
-                                        "date": GetDateStr(0),
-                                        "collection": $("#collectionpicker").val()
+                                    detailstore.load({
+                                        "name": '{$name}',
+                                        "year": $('#syear').val(),
+                                        "month": $('#smonth').val()
                                     });
                                     detaildialog.close();
                                 }
