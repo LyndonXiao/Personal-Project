@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图表</title>
+    <link href="/PlanB/Public/Css/dpl.css" rel="stylesheet">
+    <link href="/PlanB/Public/Css/bui.css" rel="stylesheet">
+
+</head>
+<body>
+<div style="margin-top: 20px;margin-bottom: 18px;margin-left: 30px;">
+    <button class="button" onclick="javascript:self.location='__URL__/Index'" style="width: 50px;">返回</button>
+    <span id="detail_name" style="margin-left:30%;"></span>
+        <span style="float: right;margin-right: 50px;">
+        <label>选择时间：</label>
+        <select style="width: 100px;" id="syear">
+            <script language="javascript">
+                var year = "{$year}";
+                if(year == ""){
+                    for (i = 2050; i >= 1940; i--) {
+                        if (i == new Date().getFullYear()) {
+                            document.write('<option selected value="' + i + '">' + i + '</option>')
+                        } else {
+                            document.write('<option   value="' + i + '">' + i + '</option>')
+                        }
+                    }
+                }else{
+                    for (i = 2050; i >= 1940; i--) {
+                        if (i == year) {
+                            document.write('<option selected value="' + i + '">' + i + '</option>')
+                        } else {
+                            document.write('<option   value="' + i + '">' + i + '</option>')
+                        }
+                    }
+                }
+            </script>
+        </select>年
+    </span>
+</div>
+<div class="detail-section" style="text-align: center;">
+    <div id="canvas">
+
+    </div>
+</div>
+
+<script src="http://g.tbcdn.cn/bui/acharts/1.0.32/acharts-min.js"></script>
+<script src="http://g.tbcdn.cn/fi/bui/jquery-1.8.1.min.js"></script>
+<script type="text/javascript">
+    var chart = new AChart({
+        theme : AChart.Theme.SmoothBase,
+        id : 'canvas',
+        width : 1000,
+        height : 600,
+        plotCfg : {
+            margin : [50,50,80] //画板的边距
+        },
+        xAxis : {
+            categories : ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月']
+        },
+        tooltip : {
+            valueSuffix : '件',
+            shared : true, //是否多个数据序列共同显示信息
+            crosshairs : true //是否出现基准线
+        },
+        series : [{
+            name: '入库',
+            data: {$input}
+        }, {
+            name: '出库',
+            data: {$output}
+        }, {
+            name: '剩余库存',
+            data: {$summary}
+        }]
+    });
+
+    chart.render();
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#detail_name').html('<a style="font-size:30px;bold;">{:$_GET["name"]}</a>');
+        $('#syear').on('change', function () {
+            self.location = "__URL__/achart/name/{$name}"+"/year/" + $('#syear').val();
+        });
+    });
+</script>
+</body>
+</html>

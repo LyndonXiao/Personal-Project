@@ -39,10 +39,9 @@
         </div>
     </div>
     <!-- 此节点内部的内容会在弹出框内显示,默认隐藏此节点-->
-    <div id="content" class="bui-hidden">
+    <div id="inputcontent" class="bui-hidden">
         <div style="text-align:center;">
-            <span id="actionTag"></span>
-            <form id="form" class="form-horizontal" style="margin-top:10px;">
+            <form id="inputform" class="form-horizontal" style="margin-top:10px;">
                 <p>
                     <label>类别：</label>
                     <select name="collection">
@@ -56,19 +55,50 @@
                 </p>
                 <p>
                     <label>数量：</label>
-                    <input name="amount" id="amount" type="text">
+                    <input name="input" id="input" type="text">
                 </p>
                 <p>
                     <label>日期：</label>
-                    <input class="calendar" id="date" name="date" type="text" data-rules="min:">
-                </p>
-                <p>
-                    <input id="action" name="action" type="hidden" value="" />
+                    <input class="calendar" name="date" type="text" data-rules="min:">
                 </p>
                 <p>
                     <label>用户：</label>
-                    <input type="text" id="username" name="username" disabled="true" value="{$username}" />
-                    <input type="hidden" name="username" value="{$username}" />
+                    <input type="text" name="username" readonly value="{$username}" />
+                </p>
+                <p>
+                    <label>备注：</label>
+                    <input name="note" type="text">
+                </p>
+            </form>
+        </div>
+    </div>
+    <!-- End -->
+    <!-- 此节点内部的内容会在弹出框内显示,默认隐藏此节点-->
+    <div id="outputcontent" class="bui-hidden">
+        <div style="text-align:center;">
+            <form id="outputform" class="form-horizontal" style="margin-top:10px;">
+                <p>
+                    <label>类别：</label>
+                    <select name="collection">
+                        <volist name="vo2" id="vo2">
+                            <option value="{$vo2.name}">{$vo2.name}</option>
+                        </volist>
+                    </select>
+                </p>
+                <p>
+                    <label>名称：</label><span id="s2"></span>
+                </p>
+                <p>
+                    <label>数量：</label>
+                    <input name="output" id="output" type="text">
+                </p>
+                <p>
+                    <label>日期：</label>
+                    <input class="calendar" name="date" type="text" data-rules="min:">
+                </p>
+                <p>
+                    <label>用户：</label>
+                    <input type="text" name="username" readonly value="{$username}" />
                 </p>
                 <p>
                     <label>备注：</label>
@@ -113,7 +143,7 @@
         <script type="text/javascript">
             $(document).ready(function () {
                 //设置当前日期
-                $('#date').val(GetDateStr(0));
+                $('.calendar').val(GetDateStr(0));
                 $('#sname').keydown(function(e){
                     if(e.keyCode==13){
                         store.load({
@@ -303,12 +333,18 @@
         <!-- script start -->
         <script type="text/javascript">
             var Select = BUI.Select;
-        var suggest = new Select.Suggest({
-            render: '#s1',
-            name: 'name',
-            data: {$name}
-        });
-        suggest.render();
+            var suggest = new Select.Suggest({
+                render: '#s1',
+                name: 'name',
+                data: {$name}
+            }),
+                suggest2 = new Select.Suggest({
+                render: '#s2',
+                name: 'name',
+                data: {$name}
+                });
+            suggest.render();
+            suggest2.render();
         </script>
         <!-- script end -->
         <!-- script start -->
@@ -320,39 +356,37 @@
             srcNode: '#form'
         }).render();
 
-        var dialog = new Overlay.Dialog({
-            title: '出入库',
+        var inputdialog = new Overlay.Dialog({
+            title: '入库',
             width: 500,
             height: 400,
             //配置DOM容器的编号
-            contentId: 'content',
+            contentId: 'inputcontent',
             buttons: [
                 {
                     text: '提交',
                     elCls: 'button button-primary',
                     handler: function () {
-                        if($("[name='name']").val() !== '' && $('#amount').val() !== ''){
+                        if($('#input').val() !== ''){
                         //提交表单
                         $.ajax({
                             url: '__URL__/addRecord',
-                            data: $('#form').serialize(),
+                            data: $('#inputform').serialize(),
                             type: "get",
                             cache: false,
                             dataType: 'text',
                             success: function (data) {
-                                if (data == 0) {
-                                    alert("添加失败");
-                                } else if (data == 2) {
-                                    alert("库存不足");
-                                } else {
+                                if (data == 1) {
                                     alert("添加成功");
-                                    dialog.close();
-                                    $("#datepicker").val(GetDateStr(0));
+                                    inputdialog.close();
                                     store.load({
                                         "date": GetDateStr(0),
                                         "collection": $("#collectionpicker").val()
                                     });
-                                    detaildialog.close();
+                                } else if (data == 2) {
+                                    alert("库存不足");
+                                } else {
+                                    alert("添加失败!错误信息：" + data);
                                 }
                             },
                             error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -373,6 +407,58 @@
                 }
             ]
         });
+
+            var outputdialog = new Overlay.Dialog({
+                title: '出库',
+                width: 500,
+                height: 400,
+                //配置DOM容器的编号
+                contentId: 'outputcontent',
+                buttons: [
+                    {
+                        text: '提交',
+                        elCls: 'button button-primary',
+                        handler: function () {
+                            if($('#output').val() !== ''){
+                                //提交表单
+                                $.ajax({
+                                    url: '__URL__/addRecord',
+                                    data: $('#outputform').serialize(),
+                                    type: "get",
+                                    cache: false,
+                                    dataType: 'text',
+                                    success: function (data) {
+                                        if (data == 1) {
+                                            alert("添加成功");
+                                            outputdialog.close();
+                                            store.load({
+                                                "date": GetDateStr(0),
+                                                "collection": $("#collectionpicker").val()
+                                            });
+                                        } else if (data == 2) {
+                                            alert("库存不足");
+                                        } else {
+                                            alert("添加失败!错误信息：" + data);
+                                        }
+                                    },
+                                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                        // view("异常！");
+                                        alert(XMLHttpRequest.status + "\n" + textStatus + "\n" + errorThrown);
+                                    }
+                                });
+                            }else{
+                                alert('请填写名称和数量');
+                            }
+                        }
+                    }, {
+                        text: '取消',
+                        elCls: 'button button-warning',
+                        handler: function () {
+                            this.close();
+                        }
+                    }
+                ]
+            });
 
         // 类别弹窗
         var collectiondialog = new Overlay.Dialog({
@@ -421,6 +507,7 @@
                             success: function (data) {
                                 collectionstore.load();
                                 adddialog.close();
+                                $("#collectionname").val('');
                             },
                             error: function (XMLHttpRequest, textStatus, errorThrown) {
                                 // view("异常！");
@@ -440,17 +527,13 @@
         });
         //响应入库按钮
         $('#btnInput').on('click', function () {
-            dialog.show();
-            $("#actionTag").html("<h2>入库</h2>");
-            $("#action").val("入库");
-            $("#amount").val("");
+            inputdialog.show();
+            $("#input").val("");
         });
         //响应出库按钮
         $('#btnOutput').on('click', function () {
-            dialog.show();
-            $("#actionTag").html("<h2>出库</h2>");
-            $("#action").val("出库");
-            $("#amount").val("");
+            outputdialog.show();
+            $("#out").val("");
         });
 
         //响应查看分类按钮

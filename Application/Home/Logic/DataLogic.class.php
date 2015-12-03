@@ -1,19 +1,9 @@
 <?php
 namespace Home\Logic;
 
-class IndexLogic extends \Think\Model {
+class DataLogic extends \Think\Model {
 
-	public function getCollectionData()
-	{
-		$start = intval(I("get.start"));
-		$length = intval(I("get.limit"));
-		$data = array();
-		$field = 'ID,NAME';
-		$data["rows"] = M('Collection')->field($field)->limit($start . "," . $length)->select();
-		$data["results"] = M('Collection')->field($field)->count();
-		return $data;
-	}
-
+	//数据库操作区
 	public function getListData()
 	{
 		$where ['NAME'] = I('get.name');
@@ -95,6 +85,17 @@ class IndexLogic extends \Think\Model {
 		return $data;
 	}
 
+	public function getCollectionData()
+	{
+		$start = intval(I("get.start"));
+		$length = intval(I("get.limit"));
+		$data = array();
+		$field = 'ID,NAME';
+		$data["rows"] = M('Collection')->field($field)->limit($start . "," . $length)->select();
+		$data["results"] = M('Collection')->field($field)->count();
+		return $data;
+	}
+
 	public function addCollectionData()
 	{
 		$data['NAME'] = I('get.collectionname');
@@ -106,12 +107,12 @@ class IndexLogic extends \Think\Model {
 	{
 		$rawData = I('get.');
 		//判断名称是否存在
-		$where['NAME'] = $rawData['name'];
+		$where['NAME'] = trim($rawData['name']);
 		$where['COLLECTION'] = $rawData['collection'];
 		$name = M('Name')->where($where)->limit(1)->find();
 		if($name == null){
 			//名称不存在
-			$data['NAME'] = $rawData['name'];
+			$data['NAME'] = trim($rawData['name']);
 			$data['COLLECTION'] = $rawData['collection'];
 			$data['STORAGE'] = $rawData['amount'];
 			$data['LASTDAY'] = $rawData['date'];
@@ -126,7 +127,7 @@ class IndexLogic extends \Think\Model {
 		}else{
 			//名称存在
 			$data['LASTDAY'] = $rawData['date'];
-			$data['NOTE'] = $rawData['note'];
+			$data['NOTE'] = trim($rawData['note']);
 			$data['USER'] = $rawData['username'];
 			if($rawData['action'] == "入库"){
 				$data['STORAGE'] = $name['storage'] + $rawData['amount'];
@@ -143,7 +144,7 @@ class IndexLogic extends \Think\Model {
 		}
 		//判断是否有当日记录
 		$where['DATE'] = $rawData['date'];
-		$where['NAME'] = $rawData['name'];
+		$where['NAME'] = trim($rawData['name']);
 		$where['COLLECTION'] = $rawData['collection'];
 		$res = M('Pool')->where($where)->limit(1)->find();
 		if($res !== null){
@@ -183,12 +184,12 @@ class IndexLogic extends \Think\Model {
 			}
 		}else{
 			//如果无当天记录
-			$where2['NAME'] = $rawData['name'];
+			$where2['NAME'] = trim($rawData['name']);
 			$where2['COLLECTION'] = $rawData['collection'];
 			$res = M('Pool')->where($where2)->order('DATE desc')->limit(1)->find();
 			if($res == null){
 				//如果不存在上条记录
-				$data['NAME'] = $rawData['name'];
+				$data['NAME'] = trim($rawData['name']);
 				$data['COLLECTION'] = $rawData['collection'];
 				$data['DATE'] = $rawData['date'];
 				$data['NOTE'] = $rawData['note'];
@@ -210,7 +211,7 @@ class IndexLogic extends \Think\Model {
 				}
 			}else{
 				//如果存在上条记录
-				$data['NAME'] = $rawData['name'];
+				$data['NAME'] = trim($rawData['name']);
 				$data['COLLECTION'] = $rawData['collection'];
 				$data['DATE'] = $rawData['date'];
 				$data['NOTE'] = $rawData['note'];
@@ -256,11 +257,29 @@ class IndexLogic extends \Think\Model {
 		$where2['COLLECTION'] = $result['collection'];
 		$result2 = M('Name')->where($where2)->limit(1)->find();
 		$data['STORAGE'] = $result2['storage'] + $result['output'] - $result['input'];
-		$res = M("Name")->where($where2)->limit(1)->save($data);
+		M("Name")->where($where2)->limit(1)->save($data);
+		$where2['DATE'] = array('GT',$result['date']);
+		$res = M('Pool')->where($where2)->select();
+		foreach($res as $key => $value){
+			$data2['SUMMARY'] = $value['summary'] + $result['output'] - $result['input'];
+			$where2['DATE'] = $value['date'];
+			M('Pool')->where($where2)->limit(1)->save($data2);
+		}
 		$res2 = M("Pool")->where($where)->delete();
 		if($res2){
 			return 1;
 		}else{
+			return 0;
+		}
+	}
+
+	function delCollectionData()
+	{
+		$where['ID'] = I('get.id');
+		$result = M('Collection')->where($where)->limit(1)->delete();
+		if($result){
+			return 1;
+		} else {
 			return 0;
 		}
 	}
