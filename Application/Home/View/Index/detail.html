@@ -32,7 +32,7 @@
 </head>
 
 <body>
-    <!-- 初始隐藏 dialog内容 -->
+     <!--初始隐藏 dialog内容 -->
     <div id="editcontent" class="hide">
         <form class="form-horizontal" style="margin-left:100px;">
             <p>
@@ -68,52 +68,12 @@
             </p>
         </form>
     </div>
-    <!-- 此节点内部的内容会在弹出框内显示,默认隐藏此节点-->
-    <div id="content" class="bui-hidden">
-        <div style="text-align:center;">
-            <span id="actionTag"></span>
-            <form id="form" class="form-horizontal" style="margin-top:10px;">
-                <p>
-                    <label>类别：</label>
-                    <select name="collection">
-                        <volist name="vo" id="vo">
-                            <option value="{$vo.name}">{$vo.name}</option>
-                        </volist>
-                    </select>
-                </p>
-                <p>
-                    <label>名称：</label><span id="s1"></span>
-                </p>
-                <p>
-                    <label>数量：</label>
-                    <input name="amount" id="amount" type="text">
-                </p>
-                <p>
-                    <label>日期：</label>
-                    <input class="calendar" id="date" name="date" type="text" data-rules="min:">
-                </p>
-                <p>
-                    <input id="action" name="action" type="hidden" value="" />
-                </p>
-                <p>
-                    <label>用户：</label>
-                    <input type="text" id="username" name="username" readonly value="{$username}" />
-                </p>
-                <p>
-                    <label>备注：</label>
-                    <input name="note" type="text">
-                </p>
-            </form>
-        </div>
-    </div>
-    <!-- End -->
+    
     <div style="margin-bottom: 30px;">
         <button class="button" onclick="javascript:self.location='__URL__/Index'" style="margin-right:3%;width: 50px;">返回</button>
         <button class="button button-primary" onclick="javascript:self.location='__URL__/achart/name/{$name}'" style="width: 50px;">图表</button>
         <span id="detail_name" style="margin-left:20%;"></span>
         <span style="float: right;margin-right: 50px;">
-        <button id="btnInput" class="button button-primary" style="margin-right: 10px;">入库</button>
-        <button id="btnOutput" class="button button-success" style="margin-right: 20px;">出库</button>
         <label>选择时间：</label>
         <select style="width: 100px;" name="syear" id="syear">
         <script language="javascript">
@@ -287,81 +247,11 @@
         var form = new Form.HForm({
             srcNode: '#form'
         }).render();
-
-        var dialog = new Overlay.Dialog({
-            title: '出入库',
-            width: 500,
-            height: 400,
-            //配置DOM容器的编号
-            contentId: 'content',
-            buttons: [
-                {
-                    text: '提交',
-                    elCls: 'button button-primary',
-                    handler: function () {
-                        if($('#amount').val() !== ''){
-                        //提交表单
-                        $.ajax({
-                            url: '__URL__/addRecord',
-                            data: $('#form').serialize(),
-                            type: "get",
-                            cache: false,
-                            dataType: 'text',
-                            success: function (data) {
-                                if (data == 0) {
-                                    alert("添加失败");
-                                } else if (data == 2) {
-                                    alert("库存不足");
-                                } else {
-                                    alert("添加成功");
-                                    dialog.close();
-                                    $("#datepicker").val(GetDateStr(0));
-                                    detailstore.load({
-                                        "name": '{$name}',
-                                        "year": $('#syear').val(),
-                                        "month": $('#smonth').val()
-                                    });
-                                    detaildialog.close();
-                                }
-                            },
-                            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                                // view("异常！");
-                                alert(XMLHttpRequest.status + "\n" + textStatus + "\n" + errorThrown);
-                            }
-                        });
-                        }else{
-                            alert('请填写名称及数量');
-                        }
-                    }
-                }, {
-                    text: '取消',
-                    elCls: 'button button-warning',
-                    handler: function () {
-                        this.close();
-                    }
-                }
-            ]
-        });
-
-        //响应入库按钮
-        $('#btnInput').on('click', function () {
-            dialog.show();
-            $("#actionTag").html("<h2>入库</h2>");
-            $("#action").val("入库");
-            $("#amount").val("");
-        });
-        //响应出库按钮
-        $('#btnOutput').on('click', function () {
-            dialog.show();
-            $("#actionTag").html("<h2>出库</h2>");
-            $("#action").val("出库");
-            $("#amount").val("");
-        });
         </script>
         <!-- script end -->
         <script type="text/javascript">
             $(document).ready(function () {
-                $('#detail_name').html('<a style="font-size:30px;bold;">{:$_GET["name"]}</a>');            
+                $('#detail_name').html('<a style="font-size:30px;bold;">{:urldecode($_GET["collection"])." ".urldecode($_GET["name"])}</a>');            
                 $('#date').val(GetDateStr(0));
                 $('#syear, #smonth').on('change', function () {
                     detailstore.load({

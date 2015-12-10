@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>PlanB</title>
+    <title>总库存</title>
     <link href="/PlanB/Public/Css/dpl.css" rel="stylesheet">
     <link href="http://g.alicdn.com/bui/bui/1.1.21/css/bs3/bui.css" rel="stylesheet">
     <style>
@@ -12,6 +12,9 @@
             padding: 20px 50px;
             ;
             font-size: 1.2em;
+        }
+        a:hover {
+            text-decoration: none;
         }
         
         tfoot tr {
@@ -109,15 +112,16 @@
     </div>
     <!-- End -->
     <div style="margin-bottom: 30px;margin-left: 3%;">
-        <button id="btnInput" class="button button-primary" style="margin-right: 10px;width: 50px;">入库</button>
-        <button id="btnOutput" class="button button-success" style="margin-right: 10px;width: 50px;">出库</button>
-        <button id="btnCollection" class="button">设置类别</button>
+        <button id="btnInput" class="button button-primary" {:$access>0?'':'disabled'} style="margin-right: 10px;width: 50px;">入库</button>
+        <button id="btnOutput" class="button button-success" {:$access>0?'':'disabled'} style="margin-right: 10px;width: 50px;">出库</button>
+        <button id="btnCollection" {:$access>0?'':'disabled'} class="button">设置类别</button>
+        <a style="font-size:30px;Bold;margin-left:15%;">总库存</a>
         <span style="float:right;margin-right:3%;">
         <label >类别：</label>
         <select name="collectionpicker" id="collectionpicker" style="width:100px;margin-right: 20px;">
             <option value="全部">全部</option>
-            <volist name="vo2" id="vo2">
-                <option value="{$vo2.name}">{$vo2.name}</option>
+            <volist name="vo3" id="vo3">
+                <option value="{$vo3.name}">{$vo3.name}</option>
             </volist>
         </select>
         <label>名称：</label>
@@ -313,8 +317,9 @@
         
         grid.on('cellclick', function (ev) {
                     var record = ev.record, //点击行的记录
-                    name = record.name;
-                    self.location = '__URL__/detail/name/' + name;
+                    name = record.name,
+                    collection = record.collection;
+                    self.location = '__URL__/detail/collection/' + collection + '/name/' + name;
         });
         </script>
         <!-- script end -->

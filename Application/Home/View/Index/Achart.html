@@ -54,6 +54,9 @@
         plotCfg : {
             margin : [50,50,80] //画板的边距
         },
+        title: {
+                text: '{:$_GET["name"]}的月度汇总'
+        },
         xAxis : {
             categories : ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月']
         },
@@ -78,7 +81,7 @@
 </script>
 <script type="text/javascript">
     $(document).ready(function () {
-        $('#detail_name').html('<a style="font-size:30px;bold;">{:$_GET["name"]}</a>');
+        //$('#detail_name').html('<a style="font-size:30px;bold;">{:$_GET["name"]}</a>');
         $('#syear').on('change', function () {
             self.location = "__URL__/achart/name/{$name}"+"/year/" + $('#syear').val();
         });

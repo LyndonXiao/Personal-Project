@@ -15,10 +15,13 @@ class IndexController extends Controller {
         }
         $name = $this->getNameData();
         $collection = $this->getCollectionData();
+        $access = $this->getAccess(cookie("username"));
         $this->assign('username',cookie('username'));
+        $this->assign('access',$access);
         $this->assign('name',json_encode($name));
         $this->assign('vo',$collection['rows']);
-        $this->assign('vo2',$collection['rows']);
+        $this->assign('vo2',$collection['rows']); 
+        $this->assign('vo3',$collection['rows']);
         $this->display('index');
     }
 
@@ -67,6 +70,24 @@ class IndexController extends Controller {
         }
     }
 
+    public function signup(){
+        $raw = I('post.');
+        $where['USERNAME'] = $raw['username'];
+        $res = M('User')->where($where)->limit(1)->find();
+        if($res){
+            $this->ajaxReturn(2);
+        }else{
+            $data['USERNAME'] = $raw['username'];
+            $data['PASSWORD'] = $raw['password'];
+            $res = M('User')->add($data);
+            cookie('username',$raw['username'],3600);
+            if($res){
+                cookie('username',$raw['username'],3600);
+                $this->ajaxReturn(1);
+            }
+        }
+    }
+
     public function getList()
     {
         if(I('get.id')){
@@ -111,6 +132,11 @@ class IndexController extends Controller {
         $this->ajaxReturn($data);
     }
 	//数据库操作区
+    public function getAccess($username){
+        $access = M('User')->where('USERNAME = '.$username)->limit(1)->getField("ACCESS");
+        return $access;
+    }
+
     public function getData($type)
     {
         if(I('get.year')){
@@ -187,17 +213,35 @@ class IndexController extends Controller {
     }
     public function getListData()
     {
+        $year ="";
+        $month = "";
         $where ['NAME'] = I('get.name');
         if(I('get.year') && I('get.month')){
             $where['DATE'] = array('LIKE',I('get.year').'-'.I('get.month')."%");
+            $year = I('get.year');
+            $month = I('get.month');
         }else{
             $where['DATE'] = array('LIKE',date('Y').'-'.date('m')."%");
+            $year = date('Y');
+            $month = date('m');
         }
         $start = intval(I("get.start"));
         $length = intval(I("get.limit"));
         $data = array();
         $field = 'ID,NAME,COLLECTION,DATE,INPUT,OUTPUT,SUMMARY,NOTE,USER';
         $data["rows"] = M('Pool')->field($field)->where($where)->limit($start . "," . $length)->order('DATE asc')->select();
+        if($data['rows'] == null){
+            if($month == 1){
+                $year = $year - 1;
+                $month = "12";
+                $where["DATE"] = array("LIKE",$year."-".$month."%");
+                $data["rows"] = M('Pool')->field($field)->where($where)->limit(1)->order('DATE desc')->select();
+            }else{
+                $month = $month - 1;
+                $where["DATE"] = array("LIKE",$year."-".$month."%");
+                $data["rows"] = M('Pool')->field($field)->where($where)->limit(1)->order('DATE desc')->select();
+            }
+        }
         $data["results"] = M('Pool')->field($field)->where($where)->count();
         return $data;
     }
