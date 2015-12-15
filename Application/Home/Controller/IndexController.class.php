@@ -213,17 +213,16 @@ class IndexController extends Controller {
     }
     public function getListData()
     {
-        $year ="";
-        $month = "";
+        $year = I('get.year','');
+        $month = I('get.month','');
         $where ['NAME'] = I('get.name');
-        if(I('get.year') && I('get.month')){
-            $where['DATE'] = array('LIKE',I('get.year').'-'.I('get.month')."%");
-            $year = I('get.year');
-            $month = I('get.month');
+        if($year !== '' && $month !== ''){
+            $where['DATE'] = array('LIKE',$year.'-'.$month."-%");
+        }elseif($year !== '' && $month == ''){
+            $where['DATE'] = array('LIKE',$year."-%");
         }else{
-            $where['DATE'] = array('LIKE',date('Y').'-'.date('m')."%");
             $year = date('Y');
-            $month = date('m');
+            $where['DATE'] = array('LIKE',$year."-%");
         }
         $start = intval(I("get.start"));
         $length = intval(I("get.limit"));
@@ -234,11 +233,11 @@ class IndexController extends Controller {
             if($month == 1){
                 $year = $year - 1;
                 $month = "12";
-                $where["DATE"] = array("LIKE",$year."-".$month."%");
+                $where["DATE"] = array("LIKE",$year."-".$month."-%");
                 $data["rows"] = M('Pool')->field($field)->where($where)->limit(1)->order('DATE desc')->select();
             }else{
                 $month = $month - 1;
-                $where["DATE"] = array("LIKE",$year."-".$month."%");
+                $where["DATE"] = array("LIKE",$year."-".$month."-%");
                 $data["rows"] = M('Pool')->field($field)->where($where)->limit(1)->order('DATE desc')->select();
             }
         }

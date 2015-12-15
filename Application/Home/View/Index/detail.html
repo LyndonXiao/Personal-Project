@@ -88,20 +88,9 @@
     </select>年
     <select name="smonth" id="smonth" style="width: 80px;">
         <script>
-            for (i = 1; i <= 12; i++) {
-                if (i == new Date().getMonth() + 1) {
-                    if(i < 10) {
-                        document.write('<option selected value="0' + i + '">0' + i + '</option>')
-                    }else{
-                        document.write('<option selected value="' + i + '">' + i + '</option>')
-                    }
-                } else {
-                    if(i < 10) {
-                        document.write('<option   value="0' + i + '">0' + i + '</option>')
-                    }else{
-                        document.write('<option   value="' + i + '">' + i + '</option>')
-                    }
-                }
+            document.write('<option selected value="">全部</option>')
+            for (var i = 1; i <= 12; i++) {
+                document.write('<option value="' + i + '">' + i + '</option>')
             }
         </script>
     </select>月</span>
@@ -193,7 +182,7 @@
         
         detailstore = new Store({
                     url: '__URL__/getList',
-                    pageSize: 10, // 配置分页数目
+                    pageSize: 100, // 配置分页数目
                     autoLoad: false
                 }),
                 detailgrid = new Grid.Grid({
@@ -207,7 +196,8 @@
                 });
         detailgrid.render();
         detailstore.load({
-            "name": '{$name}'
+            "name": '{$name}',
+            "collection": '{$collection}'
         });
         
         // editing.on('editorshow',function(ev){
@@ -256,6 +246,7 @@
                 $('#syear, #smonth').on('change', function () {
                     detailstore.load({
                         "name": '{$name}',
+                        "collection": '{$collection}',
                         "year": $('#syear').val(),
                         "month": $('#smonth').val()
                     });
