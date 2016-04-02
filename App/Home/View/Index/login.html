@@ -1,0 +1,132 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+	<meta charset="UTF-8" />
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
+	<title>登录</title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Css/style.css" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Css/animate-custom.css" />
+	<script src="__PUBLIC__/Js/jquery-1.11.2.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			// 登录
+			$('#f1').submit(function () {
+				$.ajax({
+					url: '__URL__/loginin',
+					data: $('#f1').serialize(),
+					type: "post",
+					cache: false,
+					success: function (data) {
+						if (data == 1) {
+							self.location = '__URL__/index';
+						} else {
+							alert(data);
+						}
+					}
+				});
+				return false;
+			});
+
+			//注册
+			$('#f2').submit(function () {
+				if($('#passwordsignup').val() == $('#passwordsignup_confirm').val()){
+					$.ajax({
+						url: '__URL__/signup',
+						data: $('#f2').serialize(),
+						type: "post",
+						cache: false,
+						success: function (data) {
+							if (data == 1) {
+								self.location = '__URL__/login';
+							} else if (data == 2) {
+								alert("账号已存在！");
+							} else {
+								alert(data);
+							}
+						}
+					});
+				}else{
+					alert("两次密码不同！");
+				}
+				return false;
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div class="container">
+		<header>
+
+		</header>
+		<section>
+			<div id="container_demo">
+				<!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+				<a class="hiddenanchor" id="toregister"></a>
+				<a class="hiddenanchor" id="tologin"></a>
+				<div id="wrapper">
+					<div id="login" class="animate form">
+						<form id="f1" name="f1" autocomplete="on">
+							<h1>Login</h1>
+							<p>
+								<label for="username" class="uname" data-icon="u">用户名</label>
+								<input id="username" name="username" required="required" type="text" />
+							</p>
+							<p>
+								<label for="password" class="youpasswd" data-icon="p">密码</label>
+								<input id="password" name="password" required="required" type="password" placeholder="**********" />
+							</p>
+							<p class="login button">
+								<input type="submit" value="Login" />
+							</p>
+							<p class="change_link">
+								还没有账号？
+								<a href="#toregister" class="to_register">注册</a>
+							</p>
+						</form>
+					</div>
+
+					<div id="register" class="animate form">
+						<form id="f2" name="f2" autocomplete="on">
+							<h1> Sign up </h1>
+							<p>
+								<label for="emailsignup" class="youmail" data-icon="e">用户名</label>
+								<input id="emailsignup" name="username" required="required" type="text" placeholder="username" />
+							</p>
+							<p>
+								<label for="passwordsignup" class="youpasswd" data-icon="p">密码</label>
+								<input id="passwordsignup" name="password" required="required" type="password" placeholder="**********" />
+							</p>
+							<p>
+								<label for="passwordsignup_confirm" class="youpasswd" data-icon="p">请确认密码</label>
+								<input id="passwordsignup_confirm" required="required" type="password" placeholder="**********" />
+							</p>
+
+							<p class="signin button">
+								<input type="submit" value="Sign up" />
+							</p>
+							<p class="change_link">
+								已经有账号了？
+								<a href="#tologin" class="to_register">去登录</a>
+							</p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<p>Copyright@Lx科技</p>
+			<p>联系方式:<a href=mailto:384399002@qq.com>384399002@qq.com</a></p>
+		</footer>
+	</div>
+</body>
+
+</html>
