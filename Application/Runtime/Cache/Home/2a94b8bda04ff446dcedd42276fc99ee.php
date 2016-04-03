@@ -11,7 +11,7 @@
             background: url('/PlanB/Public/Images/bg.jpg') repeat;
             padding: 20px 50px;
             ;
-            font-size: 100%;
+            font-size: 1.2em;
         }
         
         tfoot tr {
@@ -26,36 +26,6 @@
             letter-spacing: 10px;
         }
     </style>
-    <script type="text/javascript">
-        function getCookie(c_name) {
-            if (document.cookie.length > 0) {
-                c_start = document.cookie.indexOf(c_name + "=");
-                if (c_start != -1) {
-                    c_start = c_start + c_name.length + 1;
-                    c_end = document.cookie.indexOf(";", c_start);
-                    if (c_end == -1) c_end = document.cookie.length;
-                    return unescape(document.cookie.substring(c_start, c_end));
-                }
-            }
-            return "";
-        }
-
-        function setCookie(c_name, value, expiredays) {
-            var exdate = new Date();
-            exdate.setDate(exdate.getDate() + expiredays);
-            document.cookie = c_name + "=" + escape(value) +
-                    ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString());
-        }
-
-        function checkCookie(c_name) {
-            seldate = getCookie(c_name);
-            if (seldate != null && seldate != "")
-                return true;
-            else {
-                return false;
-            }
-        }
-    </script>
 </head>
 
 <body>
@@ -106,19 +76,20 @@
         </div>
     </div>
     <!-- End -->
-    <div style="margin-bottom: 30px;margin-left: 50px;">
-        <button id="btnInput" class="button button-primary" style="margin-right: 10px;">入库</button>
-        <button id="btnOutput" class="button button-success" style="margin-right: 10px;">出库</button>
-        <button id="btnStorage" class="button button-warning" style="margin-right: 10px;">查看库存</button>
+    <div style="margin-bottom: 30px;margin-left: 3%;">
+        <button id="btnInput" class="button button-primary" style="margin-right: 10px;width: 50px;">入库</button>
+        <button id="btnOutput" class="button button-success" style="margin-right: 10px;width: 50px;">出库</button>
         <button id="btnCollection" class="button">设置类别</button>
-        <button id="btnToday" class="button button-success" style="float: right; margin-right: 50px;">今天</button>
-        <span style="float: right;margin-right: 30px;"><label>日期：</label><input id="datepicker" type="text"
-                                                                             class="calendar"/></span>
-        <span style="float: right;margin-right: 30px;"><label>类别：</label><select name="collectionpicker"
-                                                                             id="collectionpicker" style="width:100px;">
-        <option value="全部">全部</option>
-        <?php if(is_array($vo2)): $i = 0; $__LIST__ = $vo2;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo2): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo2["name"]); ?>"><?php echo ($vo2["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-    </select></span>
+        <span style="float:right;margin-right:3%;">
+        <label >类别：</label>
+        <select name="collectionpicker" id="collectionpicker" style="width:100px;margin-right: 20px;">
+            <option value="全部">全部</option>
+            <?php if(is_array($vo2)): $i = 0; $__LIST__ = $vo2;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo2): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo2["name"]); ?>"><?php echo ($vo2["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+        </select>
+        <label>名称：</label>
+        <input type="text" name="sname" id="sname" class="bui-form-field" />
+        <button class='button button-small button-primary' id="searchbtn">搜索</button>
+        </span>
     </div>
 
     <div align="center">
@@ -137,25 +108,49 @@
         <script src="http://g.tbcdn.cn/fi/bui/bui.js"></script>
         <script type="text/javascript">
             $(document).ready(function () {
-            //设置当前日期
-            if (checkCookie('sdate') == true) {
-                $('#datepicker').val(getCookie('sdate'));
-            } else {
-                $('#datepicker').val(GetDateStr(-1));
-            }
-
-            $('#date').val(GetDateStr(0));
-        });
+                //设置当前日期
+                $('#date').val(GetDateStr(0));
+                $('#sname').keydown(function(e){
+                    if(e.keyCode==13){
+                        store.load({
+                            "name": $("#sname").val(),
+                            "collection": $("#collectionpicker").val()
+                        });
+                    }
+                });
+            });
         </script>
         <script type="text/javascript">
             function GetDateStr(AddDayCount) {
-            var dd = new Date();
-            dd.setDate(dd.getDate() + AddDayCount);//获取AddDayCount天后的日期
-            var y = dd.getFullYear();
-            var m = dd.getMonth() + 1;//获取当前月份的日期
-            var d = dd.getDate();
-            return y + "-" + m + "-" + d;
-        }
+                var dd = new Date();
+                dd.setDate(dd.getDate() + AddDayCount);//获取AddDayCount天后的日期
+                var y = dd.getFullYear();
+                var m = dd.getMonth() + 1;//获取当前月份的日期
+                var d = dd.getDate();
+                return y + "-" + m + "-" + d;
+            }
+
+            function delrow(id){
+                $.ajax({
+                    url: '/PlanB/index.php/Home/Index/delCollection',
+                    data: 'id=' + id,
+                    type: "get",
+                    cache: false,
+                    dataType: 'text',
+                    success: function (data) {
+                        if (data == 0) {
+                            alert("删除失败");
+                        } else {
+                            alert("删除成功");
+                            collectionstore.load();
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        // view("异常！");
+                        alert(XMLHttpRequest.status + "\n" + textStatus + "\n" + errorThrown);
+                    }
+                });
+            }
         </script>
         <!-- script start -->
         <script type="text/javascript">
@@ -166,34 +161,28 @@
                 Store = Data.Store,
                 columns = [
                     {
-                        title: '名称',
-                        dataIndex: 'name',
-                        elCls: 'center',
-                        width: "20%"
-                    },
-                    {
                         title: '类别',
                         dataIndex: 'collection',
                         elCls: 'center',
-                        width: "20%"
+                        width: "21%"
                     },
                     {
-                        title: '出库',
-                        dataIndex: 'output',
+                        title: '名称',
+                        dataIndex: 'name',
                         elCls: 'center',
-                        width: "18%"
-                    },
-                    {
-                        title: '入库',
-                        dataIndex: 'input',
-                        elCls: 'center',
-                        width: "18%"
+                        width: "25%"
                     },
                     {
                         title: '剩余库存',
-                        dataIndex: 'summary',
+                        dataIndex: 'storage',
                         elCls: 'center',
-                        width: "24%"
+                        width: "25%"
+                    },
+                    {
+                        title: '最后操作日期',
+                        dataIndex: 'lastday',
+                        elCls: 'center',
+                        width: "30%"
                     }
                 ];
 
@@ -213,11 +202,10 @@
          *
          */
         var store = new Store({
-                    url: '/PlanB/index.php/Home/Index/getDayList',
+                    url: '/PlanB/index.php/Home/Index/getStorage',
                     autoLoad: true, //自动加载数据
                     params: {
-                        collection: "全部",
-                        date: getCookie("sdate")
+                        collection: "全部"
                     },
                     pageSize: 100 // 配置分页数目
                 }),
@@ -230,6 +218,7 @@
                     store: store,
                     emptyDataTpl: '<div class="centered"><img alt="Crying" src="/PlanB/Public/Images/norecord.png"><h2>查询的数据不存在</h2></div>'
                 });
+
         var bar = new Toolbar.NumberPagingBar({
             render: '#bar',
             autoRender: true,
@@ -238,74 +227,6 @@
             prevText: '上一页',
             nextText: '下一页'
         });
-
-        //查看库存弹窗
-        var storagecolumns = [
-            {
-                title: '类别',
-                dataIndex: 'collection',
-                elCls: 'center',
-                width: 100
-            },
-            {
-                title: '名称',
-                dataIndex: 'name',
-                elCls: 'center',
-                width: 120
-            },
-            {
-                title: '剩余库存',
-                dataIndex: 'storage',
-                elCls: 'center',
-                width: 150
-            },
-            {
-                title: '最后操作日期',
-                dataIndex: 'lastday',
-                elCls: 'center',
-                width: 100
-            }
-        ];
-
-        var storagestore = new Store({
-                    url: '/PlanB/index.php/Home/Index/getStorage',
-                    pageSize: 10, // 配置分页数目
-                    autoLoad: false
-                }),
-                storagegrid = new Grid.Grid({
-                    forceFit: true, // 列宽按百分比自适应
-                    columns: storagecolumns,
-                    loadMask: true, //加载数据时显示屏蔽层
-                    // 顶部工具栏
-            tbar:{
-                        elCls : 'pull-right',
-                        // items:工具栏的项， 可以是按钮(bar-item-button)、 文本(bar-item-text)、 默认(bar-item)、 分隔符(bar-item-separator)以及自定义项 
-                        items:[{
-                        //xclass:'bar-item-button',默认的是按钮
-                        content : '<input name="sname" id="id"/>'
-                }, {
-                    xclass:'bar-item-button',
-                    btnCls : 'button button-small button-primary',
-                    text:'搜索',
-                    listeners : {
-                        click : function(ev){
-                            storagestore.load({
-                                "name":$('[name="sname"]').val()
-                            })
-                        //ev.item,ev.text
-                        }
-                    }
-                }]
-            },
-                    // 底部工具栏
-                    bbar: {
-                        pagingBar: {
-                            xclass: 'pagingbar-number'
-                        }
-                    },
-                    store: storagestore,
-                    emptyDataTpl: '<div class="centered"><img alt="Crying" src="/PlanB/Public/Images/norecord.png"><h2>查询的数据不存在</h2></div>'
-                });
 
         //查看类别弹窗
         var collectioncolumns = [
@@ -320,6 +241,13 @@
                 dataIndex: 'name',
                 elCls: 'center',
                 width: 200
+            },
+            {
+                title : '操作',
+                dataIndex:'e',
+                renderer : function(value,obj){
+                    return '<span class="grid-command" style="margin-left:10px;" onclick="delrow('+obj.id+');">删除</span>'
+                }
             }
         ];
 
@@ -342,32 +270,14 @@
                     emptyDataTpl: '<div class="centered"><img alt="Crying" src="/PlanB/Public/Images/norecord.png"><h2>查询的数据不存在</h2></div>'
                 });
         //更改搜索条件
-        $("#datepicker").on("change", function () {
-            store.load({
-                "date": $("#datepicker").val(),
-                "collection": $("#collectionpicker").val()
-            });
-            setCookie('sdate', $("#datepicker").val(), 1800);
-        });
-
         $("#collectionpicker").on("change", function () {
             store.load({
-                "date": $("#datepicker").val(),
+                "name": $("#sname").val(),
                 "collection": $("#collectionpicker").val()
             });
         });
-
-        grid.on('cellclick', function (ev) {
-            var record = ev.record, //点击行的记录
-                    name = record.name;
-//            detailstore.load({
-//                "name": name
-//            });
-//            detaildialog.show();
-            self.location = '/PlanB/index.php/Home/Index/detail/name/' + name;
-        });
         
-        storagegrid.on('cellclick', function (ev) {
+        grid.on('cellclick', function (ev) {
                     var record = ev.record, //点击行的记录
                     name = record.name;
                     self.location = '/PlanB/index.php/Home/Index/detail/name/' + name;
@@ -460,24 +370,6 @@
             ]
         });
 
-        // 库存弹窗
-        var storagedialog = new Overlay.Dialog({
-            title: '查看库存',
-            width: 900,
-            height: 560,
-            children: [storagegrid],
-            childContainer: '.bui-stdmod-body',
-            buttons: [
-                {
-                    text: '关闭',
-                    elCls: 'button button-primary',
-                    handler: function () {
-                        this.close();
-                    }
-                }
-            ]
-        });
-
         // 类别弹窗
         var collectiondialog = new Overlay.Dialog({
             title: '查看类别',
@@ -498,6 +390,7 @@
                     elCls: 'button button-primary',
                     handler: function () {
                         this.close();
+                        location.reload();
                     }
                 }
             ]
@@ -555,24 +448,18 @@
             $("#action").val("出库");
             $("#amount").val("");
         });
-        //响应查看库存按钮
-        $('#btnStorage').on('click', function () {
-            storagedialog.show();
-            storagestore.load();
-        });
-        //响应查看库存按钮
+
+        //响应查看分类按钮
         $('#btnCollection').on('click', function () {
             collectiondialog.show();
             collectionstore.load();
         });
-        //响应回到今天按钮
-        $('#btnToday').on('click', function () {
-            $('#datepicker').val(GetDateStr(0));
+        //响应搜索按钮
+        $('#searchbtn').on('click', function () {
             store.load({
-                "date": $("#datepicker").val(),
+                "name": $("#sname").val(),
                 "collection": $("#collectionpicker").val()
             });
-            setCookie('sdate',GetDateStr(0),1800);
         });
         </script>
         <!-- script end -->

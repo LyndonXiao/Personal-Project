@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>详情</title>
+    <link href="__PUBLIC__/Css/dpl.css" rel="stylesheet">
+    <link href="__PUBLIC__/Css/bui.css" rel="stylesheet">
+    <style>
+        body {
+            background: url('__PUBLIC__/Images/bg.jpg') repeat;
+            padding: 20px 50px;
+            font-size: 1.2em;
+        }
+        
+        a:hover {
+            text-decoration: none;
+        }
+        
+        tfoot tr {
+            text-align: center;
+        }
+        
+        label {
+            letter-spacing: 3px;
+        }
+        
+        h2 {
+            letter-spacing: 10px;
+        }
+    </style>
+</head>
+
+<body>
+     <!--&lt;!&ndash;初始隐藏 dialog内容 &ndash;&gt;-->
+    <!--<div id="editcontent" class="hide">-->
+        <!--<form class="form-horizontal" style="margin-left:100px;">-->
+            <!--<p>-->
+                <!--<label>类别：</label>-->
+                <!--<input name="collection" type="text" readonly>-->
+            <!--</p>-->
+            <!--<p>-->
+                <!--<label>名称：</label>-->
+                <!--<input name="name" type="text" readonly>-->
+            <!--</p>-->
+            <!--<p>-->
+                <!--<label>入库：</label>-->
+                <!--<input name="input" type="text">-->
+                <!--<a>(可更改)</a>-->
+            <!--</p>-->
+            <!--<p>-->
+                <!--<label>出库：</label>-->
+                <!--<input name="output" type="text">-->
+                <!--<a>(可更改)</a>-->
+            <!--</p>-->
+            <!--<p>-->
+                <!--<label>日期：</label>-->
+                <!--<input name="date" type="text" class="calendar" readonly>-->
+            <!--</p>-->
+            <!--<p>-->
+                <!--<label>用户：</label>-->
+                <!--<input name="user" type="text" readonly>-->
+            <!--</p>-->
+            <!--<p>-->
+                <!--<label>备注：</label>-->
+                <!--<input name="note" type="text">-->
+                <!--<a>(可更改)</a>-->
+            <!--</p>-->
+        <!--</form>-->
+    <!--</div>-->
+     <!-- 此节点内部的内容会在弹出框内显示,默认隐藏此节点-->
+     <div id="inputcontent" class="bui-hidden">
+         <div style="text-align:center;">
+             <form id="inputform" class="form-horizontal" style="margin-top:10px;">
+                 <p>
+                     <label>类别：</label>
+                     <select name="collection">
+                         <volist name="vo" id="vo">
+                             <option value="{$vo.id}">{$vo.tname}</option>
+                         </volist>
+                     </select>
+                 </p>
+                 <p>
+                     <label>名称：</label><span id="s1"></span>
+                 </p>
+                 <p>
+                     <label>数量：</label>
+                     <input name="input" id="input" type="text">
+                 </p>
+                 <p>
+                     <label>日期：</label>
+                     <input class="calendar" name="date" type="text" data-rules="min:">
+                 </p>
+                 <p>
+                     <label>用户：</label>
+                     <input type="text" disabled value="{:$_SESSION['username']}" />
+                     <input name="username" type="hidden" value="{:$_SESSION['userid']}" />
+                 </p>
+                 <p>
+                     <label>备注：</label>
+                     <input name="note" type="text">
+                 </p>
+             </form>
+         </div>
+     </div>
+     <!-- End -->
+     <!-- 此节点内部的内容会在弹出框内显示,默认隐藏此节点-->
+     <div id="outputcontent" class="bui-hidden">
+         <div style="text-align:center;">
+             <form id="outputform" class="form-horizontal" style="margin-top:10px;">
+                 <p>
+                     <label>类别：</label>
+                     <select name="collection">
+                         <volist name="vo2" id="vo2">
+                             <option value="{$vo2.id}">{$vo2.tname}</option>
+                         </volist>
+                     </select>
+                 </p>
+                 <p>
+                     <label>名称：</label><span id="s2"></span>
+                 </p>
+                 <p>
+                     <label>数量：</label>
+                     <input name="output" id="output" type="text">
+                 </p>
+                 <p>
+                     <label>日期：</label>
+                     <input class="calendar" name="date" type="text" data-rules="min:">
+                 </p>
+                 <p>
+                     <label>用户：</label>
+                     <input type="text" disabled value="{:$_SESSION['username']}" />
+                     <input name="username" type="hidden" value="{:$_SESSION['userid']}" />
+                 </p>
+                 <p>
+                     <label>备注：</label>
+                     <input name="note" type="text">
+                 </p>
+             </form>
+         </div>
+     </div>
+     <!-- End -->
+    <div style="margin-bottom: 30px;">
+        <button class="button" onclick="javascript:self.location='__URL__/index'" style="margin-right:3%;width: 50px;">返回</button>
+        <button id="btnInput" class="button button-primary" {:$_SESSION['access']>0?'':'disabled'} style="margin-right: 10px;width:50px;">入库</button>
+        <button id="btnOutput" class="button button-success" {:$_SESSION['access']>0?'':'disabled'} style="margin-right: 10px;width:50px;">出库</button>
+        <button class="button button-primary" onclick="javascript:self.location='{:U('Index:chart')}'" style="width: 50px;">图表</button>
+        <span id="detail_name" style="margin-left:20%;"></span>
+        <span style="float: right;margin-right: 50px;">
+        <label>选择时间：</label>
+        <select style="width: 100px;" name="syear" id="syear">
+        <script language="javascript">
+            for (i = 2050; i >= 1940; i--) {
+                if (i == new Date().getFullYear()) {
+                    document.write('<option selected value="' + i + '">' + i + '</option>')
+                } else {
+                    document.write('<option   value="' + i + '">' + i + '</option>')
+                }
+            }
+        </script>
+    </select>年
+    <select name="smonth" id="smonth" style="width: 80px;">
+        <script>
+            document.write('<option selected value="">全部</option>')
+            for (var i = 1; i <= 12; i++) {
+                document.write('<option value="' + i + '">' + i + '</option>')
+            }
+        </script>
+    </select>月</span>
+
+    </div>
+    <div align="center">
+        <div class="row">
+            <div class="span25">
+                <div id="grid">
+
+                </div>
+            </div>
+        </div>
+        <div>
+            <div id="bar"></div>
+        </div>
+
+        <script src="http://g.tbcdn.cn/fi/bui/jquery-1.8.1.min.js"></script>
+        <script src="http://g.tbcdn.cn/fi/bui/bui.js"></script>
+        <!-- script start -->
+        <script type="text/javascript">
+            var Grid = BUI.Grid,
+                Toolbar = BUI.Toolbar,
+                Data = BUI.Data;
+        var Grid = Grid,
+                Store = Data.Store;
+        //详情
+        var detailcolumns = [
+            {
+                title: 'ID',
+                dataIndex: 'id',
+                visible:false
+            },
+            {
+                title: '日期',
+                dataIndex: 'date',
+                elCls: 'center',
+                width: "20%"
+            },            
+            {
+                title: '出库',
+                dataIndex: 'output',
+                elCls: 'center',
+                summary: true,
+                width: "13%"
+            },
+            {
+                title: '入库',
+                dataIndex: 'input',
+                elCls: 'center',
+                summary: true,
+                width: "13%"
+            },
+            {
+                title: '剩余库存',
+                dataIndex: 'store',
+                elCls: 'center',
+                width: "15%"
+            },
+            {
+                title:"操作员",
+                dataIndex:"user",
+                elCls:"center",
+                width:"15%"
+            },
+            {
+                title: '备注',
+                dataIndex: 'note',
+                elCls: 'center',
+                width: "25%"
+            },
+            {
+                title : '操作',
+                dataIndex:'e',
+                elCls: 'center',
+                renderer : function(value,obj){
+                    return '<span class="grid-command" onclick="delrow('+obj.id+');">删除</span>'
+                    //return '<span class="grid-command btn-edit">编辑</span><span class="grid-command" style="margin-left:10px;" onclick="delrow('+obj.id+');">删除</span>'
+                }
+            }
+        ];
+        
+//        var editing = new Grid.Plugins.DialogEditing({
+//            contentId : 'editcontent', //设置隐藏的Dialog内容
+//            triggerCls : 'btn-edit', //触发显示Dialog的样式
+//            editor : {
+//              title : '编辑',
+//              width : 500
+//            }
+//          }),
+        
+        var detailstore = new Store({
+                    url: '__URL__/getList',
+                    pageSize: 100, // 配置分页数目
+                    autoLoad: false
+                }),
+                detailgrid = new Grid.Grid({
+                    render: '#grid',
+                    loadMask: true, //加载数据时显示屏蔽层
+                    width: '100%', //如果表格使用百分比，这个属性一定要设置
+                    plugins: [Grid.Plugins.Summary],// 插件形式引入单选表格
+                    columns: detailcolumns,
+                    store: detailstore,
+                    emptyDataTpl: '<div class="centered"><img alt="Crying" src="__PUBLIC__/Images/norecord.png"><h2>查询的数据不存在</h2></div>'
+                });
+        detailgrid.render();
+        detailstore.load({
+            "name": '{$name}',
+            "type": '{$type}'
+        });
+
+//        editing.on('accept',function(ev){
+//           detailstore.save('update',ev.record,function(callback){
+//               if(callback == 1){
+//                   alert('成功');
+//                   location.reload();
+//               }else{
+//                   alert('失败')
+//               }
+//           })
+//        });
+            var Overlay = BUI.Overlay;
+            var inputdialog = new Overlay.Dialog({
+                title: '入库',
+                width: 500,
+                height: 400,
+                //配置DOM容器的编号
+                contentId: 'inputcontent',
+                buttons: [
+                    {
+                        text: '提交',
+                        elCls: 'button button-primary',
+                        handler: function () {
+                            if ($('#input').val() !== '') {
+                                //提交表单
+                                $.ajax({
+                                    url: '__URL__/addInputRecord',
+                                    data: $('#inputform').serialize(),
+                                    type: "get",
+                                    cache: false,
+                                    dataType: 'text',
+                                    success: function (data) {
+                                        if (data == 1) {
+                                            alert("入库成功");
+                                            inputdialog.close();
+                                            detailstore.load({
+                                                "name": '{$name}',
+                                                "type": '{$type}',
+                                                "year": $('#syear').val(),
+                                                "month": $('#smonth').val()
+                                            });
+                                        } else {
+                                            alert("入库失败!错误信息：" + data);
+                                        }
+                                    },
+                                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                        // view("异常！");
+                                        alert(XMLHttpRequest.status + "\n" + textStatus + "\n" + errorThrown);
+                                    }
+                                });
+                            } else {
+                                alert('请填写名称和数量');
+                            }
+                        }
+                    }, {
+                        text: '取消',
+                        elCls: 'button button-warning',
+                        handler: function () {
+                            this.close();
+                        }
+                    }
+                ]
+            });
+
+            var outputdialog = new Overlay.Dialog({
+                title: '出库',
+                width: 500,
+                height: 400,
+                //配置DOM容器的编号
+                contentId: 'outputcontent',
+                buttons: [
+                    {
+                        text: '提交',
+                        elCls: 'button button-primary',
+                        handler: function () {
+                            if ($('#output').val() !== '') {
+                                //提交表单
+                                $.ajax({
+                                    url: '__URL__/addOutputRecord',
+                                    data: $('#outputform').serialize(),
+                                    type: "get",
+                                    cache: false,
+                                    dataType: 'text',
+                                    success: function (data) {
+                                        if (data == 1) {
+                                            alert("出库成功");
+                                            outputdialog.close();
+                                            detailstore.load({
+                                                "name": '{$name}',
+                                                "type": '{$type}',
+                                                "year": $('#syear').val(),
+                                                "month": $('#smonth').val()
+                                            });
+                                        } else if (data == 2) {
+                                            alert("库存不足");
+                                        } else {
+                                            alert("添加失败!错误信息：" + data);
+                                        }
+                                    },
+                                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                        // view("异常！");
+                                        alert(XMLHttpRequest.status + "\n" + textStatus + "\n" + errorThrown);
+                                    }
+                                });
+                            } else {
+                                alert('请填写名称和数量');
+                            }
+                        }
+                    }, {
+                        text: '取消',
+                        elCls: 'button button-warning',
+                        handler: function () {
+                            this.close();
+                        }
+                    }
+                ]
+            });
+            //响应入库按钮
+            $('#btnInput').on('click', function () {
+                inputdialog.show();
+                $("#input").val("");
+            });
+            //响应出库按钮
+            $('#btnOutput').on('click', function () {
+                outputdialog.show();
+                $("#out").val("");
+            });
+        </script>
+        <script type="text/javascript">
+            BUI.use('bui/calendar', function (Calendar) {
+                var datepicker = new Calendar.DatePicker({
+                    trigger: '.calendar',
+                    autoRender: true
+                });
+            });
+        </script>
+        <!-- script start -->
+        <script type="text/javascript">
+            var Select = BUI.Select;
+            var suggest = new Select.Suggest({
+                        render: '#s1',
+                        name: 'name',
+                        data: {$nameselect}
+                    }),
+                    suggest2 = new Select.Suggest({
+                        render: '#s2',
+                        name: 'name',
+                        data: {$nameselect}
+                    });
+            suggest.render();
+            suggest2.render();
+        </script>
+        <!-- script end -->
+        <!-- script start -->
+        <script type="text/javascript">
+            var Overlay = BUI.Overlay,
+                Form = BUI.Form;
+
+        var form = new Form.HForm({
+            srcNode: '#form'
+        }).render();
+        </script>
+        <!-- script end -->
+        <script type="text/javascript">
+            $(document).ready(function () {
+                function GetDateStr(AddDayCount) {
+                    var dd = new Date();
+                    dd.setDate(dd.getDate() + AddDayCount);//获取AddDayCount天后的日期
+                    var y = dd.getFullYear();
+                    var m = dd.getMonth() + 1;//获取当前月份的日期
+                    var d = dd.getDate();
+                    return y + "-" + m + "-" + d;
+                }
+
+                $('#detail_name').html('<a style="font-size:30px;bold;">{$title}</a>');
+                $('#date').val(GetDateStr(0));
+                $('#syear, #smonth').on('change', function () {
+                    detailstore.load({
+                        "name": '{$name}',
+                        "type": '{$type}',
+                        "year": $('#syear').val(),
+                        "month": $('#smonth').val()
+                    });
+                });
+            });
+        </script>
+        <script type="text/javascript">
+            function delrow(id){
+                BUI.Message.Confirm('确认删除？',function(){
+                    $.ajax({
+                            url: '__URL__/delRecord',
+                            data: 'id=' + id,
+                            type: "post",
+                            cache: false,
+                            success: function (data) {
+                                if (data.code == 0 ) {
+                                    alert("删除失败！错误："+data.msg);
+                                } else if(data.code == 1) {
+                                    alert("删除成功");
+                                    detailstore.load({
+                                        "name": '{$name}',
+                                        "type": '{$type}',
+                                        "year": $('#syear').val(),
+                                        "month": $('#smonth').val()
+                                    })
+                                }
+                            },
+                            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                // view("异常！");
+                                alert(XMLHttpRequest.status + "\n" + textStatus + "\n" + errorThrown);
+                            }
+                        });
+                });
+            }
+        </script>
+
+    </div>
+</body>
+
+</html>

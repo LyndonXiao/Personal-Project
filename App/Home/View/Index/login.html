@@ -45,9 +45,9 @@
 						cache: false,
 						success: function (data) {
 							if (data == 1) {
-								self.location = '__URL__/index';
+								self.location = '__URL__/login';
 							} else if (data == 2) {
-								alert("对不起，账号已存在！");
+								alert("账号已存在！");
 							} else {
 								alert(data);
 							}
@@ -99,7 +99,7 @@
 							<h1> Sign up </h1>
 							<p>
 								<label for="emailsignup" class="youmail" data-icon="e">用户名</label>
-								<input id="emailsignup" name="username" required="required" type="text" placeholder="mysupermail@mail.com" />
+								<input id="emailsignup" name="username" required="required" type="text" placeholder="username" />
 							</p>
 							<p>
 								<label for="passwordsignup" class="youpasswd" data-icon="p">密码</label>

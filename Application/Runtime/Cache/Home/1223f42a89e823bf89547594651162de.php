@@ -10,8 +10,11 @@
         body {
             background: url('/PlanB/Public/Images/bg.jpg') repeat;
             padding: 20px 50px;
-            ;
-            font-size: 100%;
+            font-size: 1.2em;
+        }
+        
+        a:hover {
+            text-decoration: none;
         }
         
         tfoot tr {
@@ -29,6 +32,42 @@
 </head>
 
 <body>
+    <!-- 初始隐藏 dialog内容 -->
+    <div id="editcontent" class="hide">
+        <form class="form-horizontal" style="margin-left:100px;">
+            <p>
+                <label>类别：</label>
+                <input name="collection" type="text" readonly>
+            </p>
+            <p>
+                <label>名称：</label>
+                <input name="name" type="text" readonly>
+            </p>
+            <p>
+                <label>入库：</label>
+                <input name="input" type="text">
+                <a>(可更改)</a>
+            </p>
+            <p>
+                <label>出库：</label>
+                <input name="output" type="text">
+                <a>(可更改)</a>
+            </p>
+            <p>
+                <label>日期：</label>
+                <input name="date" type="text" class="calendar" readonly>
+            </p>
+            <p>
+                <label>用户：</label>
+                <input name="user" type="text" readonly>
+            </p>
+            <p>
+                <label>备注：</label>
+                <input name="note" type="text">
+                <a>(可更改)</a>
+            </p>
+        </form>
+    </div>
     <!-- 此节点内部的内容会在弹出框内显示,默认隐藏此节点-->
     <div id="content" class="bui-hidden">
         <div style="text-align:center;">
@@ -56,8 +95,7 @@
                 </p>
                 <p>
                     <label>用户：</label>
-                    <input type="text" id="username" name="username" disabled="true" value="<?php echo ($username); ?>" />
-                    <input type="hidden" name="username" value="<?php echo ($username); ?>" />
+                    <input type="text" id="username" name="username" readonly value="<?php echo ($username); ?>" />
                 </p>
                 <p>
                     <label>备注：</label>
@@ -67,10 +105,9 @@
         </div>
     </div>
     <!-- End -->
-    <div style="margin-bottom: 30px;margin-left: 50px;">
-        <button class="button" onclick="javascript:self.location='/PlanB/index.php/Home/Index/Index'" style="margin-right:30px;">返回</button>
-        <button id="btnStorage" class="button button-warning" style="margin-right: 10px;">查看库存</button>
-        <span id="detail_name" style="margin-left:15%"></span>
+    <div style="margin-bottom: 30px;">
+        <button class="button" onclick="javascript:self.location='/PlanB/index.php/Home/Index/Index'" style="margin-right:3%;width: 50px;;">返回</button>
+        <span id="detail_name" style="margin-left:20%;"></span>
         <span style="float: right;margin-right: 50px;">
         <button id="btnInput" class="button button-primary" style="margin-right: 10px;">入库</button>
         <button id="btnOutput" class="button button-success" style="margin-right: 20px;">出库</button>
@@ -123,6 +160,11 @@
         //详情弹窗
         var detailcolumns = [
             {
+                title: 'ID',
+                dataIndex: 'id',
+                visible:false
+            },
+            {
                 title: '日期',
                 dataIndex: 'date',
                 elCls: 'center',
@@ -159,10 +201,24 @@
                 dataIndex: 'note',
                 elCls: 'center',
                 width: "25%"
+            },
+            {
+                title : '操作',dataIndex:'e',renderer : function(value,obj){
+              return '<span class="grid-command btn-edit">编辑</span><span class="grid-command" style="margin-left:10px;" onclick="delrow('+obj.id+');">删除</span>'
+                }
             }
         ];
-
-        var detailstore = new Store({
+        
+        var editing = new Grid.Plugins.DialogEditing({
+            contentId : 'editcontent', //设置隐藏的Dialog内容
+            triggerCls : 'btn-edit', //触发显示Dialog的样式
+            editor : {
+              title : '编辑',
+              width : 500
+            }
+          }),
+        
+        detailstore = new Store({
                     url: '/PlanB/index.php/Home/Index/getList',
                     pageSize: 10, // 配置分页数目
                     autoLoad: false
@@ -171,88 +227,32 @@
                     render: '#grid',
                     loadMask: true, //加载数据时显示屏蔽层
                     width: '100%', //如果表格使用百分比，这个属性一定要设置
-                    plugins: [Grid.Plugins.Summary],// 插件形式引入单选表格
+                    plugins: [editing,Grid.Plugins.Summary],// 插件形式引入单选表格
                     columns: detailcolumns,
-                    store: detailstore,                    
+                    store: detailstore,
                     emptyDataTpl: '<div class="centered"><img alt="Crying" src="/PlanB/Public/Images/norecord.png"><h2>查询的数据不存在</h2></div>'
                 });
-        detailgrid.render();        
+        detailgrid.render();
         detailstore.load({
             "name": '<?php echo ($name); ?>'
         });
-
-        //查看库存弹窗
-        var storagecolumns = [
-            {
-                title: '类别',
-                dataIndex: 'collection',
-                elCls: 'center',
-                width: 100
-            },
-            {
-                title: '名称',
-                dataIndex: 'name',
-                elCls: 'center',
-                width: 120
-            },
-            {
-                title: '剩余库存',
-                dataIndex: 'storage',
-                elCls: 'center',
-                width: 150
-            },
-            {
-                title: '最后操作日期',
-                dataIndex: 'lastday',
-                elCls: 'center',
-                width: 100
-            }
-        ];
-
-        var storagestore = new Store({
-            url: '/PlanB/index.php/Home/Index/getStorage',
-            pageSize: 10, // 配置分页数目
-            autoLoad: false
-        }),
-        storagegrid = new Grid.Grid({
-            forceFit: true, // 列宽按百分比自适应
-            columns: storagecolumns,
-            loadMask: true, //加载数据时显示屏蔽层
-            // 顶部工具栏
-            tbar:{
-                        elCls : 'pull-right',
-                        // items:工具栏的项， 可以是按钮(bar-item-button)、 文本(bar-item-text)、 默认(bar-item)、 分隔符(bar-item-separator)以及自定义项 
-                        items:[{
-                        //xclass:'bar-item-button',默认的是按钮
-                        content : '<input name="sname" id="id"/>'
-                }, {
-                    xclass:'bar-item-button',
-                    btnCls : 'button button-small button-primary',
-                    text:'搜索',
-                    listeners : {
-                        click : function(ev){
-                            storagestore.load({
-                                "name":$('[name="sname"]').val()
-                            })
-                        //ev.item,ev.text
-                        }
-                    }
-                }]
-            },
-            // 底部工具栏
-                    bbar: {
-                        pagingBar: {
-                            xclass: 'pagingbar-number'
-                        }
-                    },
-                    store: storagestore,
-                    emptyDataTpl: '<div class="centered"><img alt="Crying" src="/PlanB/Public/Images/norecord.png"><h2>查询的数据不存在</h2></div>'
-                });
-                
-                storagegrid.on('cellclick', function (ev) {
-                    var record = ev.record, //点击行的记录
-                    name = record.name;
-                    self.location = '/PlanB/index.php/Home/Index/detail/name/' + name;
+        
+        // editing.on('editorshow',function(ev){
+        //   var editor = editing.get('curEditor');
+        //   editor.set('errorAlign',{
+        //     points :['br','tr'] ,
+        //     offset: [0, 10]
+        //   });
+        // });
+        editing.on('accept',function(ev){
+           detailstore.save('update',ev.record,function(callback){
+               if(callback == 1){
+                   alert('成功');
+                   location.reload();
+               }else{
+                   alert('失败')
+               }
+           })
         });
         </script>
         <!-- script start -->
@@ -286,7 +286,7 @@
                     text: '提交',
                     elCls: 'button button-primary',
                     handler: function () {
-                        if($("[name='name']").val() !== '' && $('#amount').val() !== ''){
+                        if($('#amount').val() !== ''){
                         //提交表单
                         $.ajax({
                             url: '/PlanB/index.php/Home/Index/addRecord',
@@ -303,9 +303,10 @@
                                     alert("添加成功");
                                     dialog.close();
                                     $("#datepicker").val(GetDateStr(0));
-                                    store.load({
-                                        "date": GetDateStr(0),
-                                        "collection": $("#collectionpicker").val()
+                                    detailstore.load({
+                                        "name": '<?php echo ($name); ?>',
+                                        "year": $('#syear').val(),
+                                        "month": $('#smonth').val()
                                     });
                                     detaildialog.close();
                                 }
@@ -316,30 +317,12 @@
                             }
                         });
                         }else{
-                            alert('请填写名称和数量');
+                            alert('请填写名称及数量');
                         }
                     }
                 }, {
                     text: '取消',
                     elCls: 'button button-warning',
-                    handler: function () {
-                        this.close();
-                    }
-                }
-            ]
-        });
-
-        // 库存弹窗
-        var storagedialog = new Overlay.Dialog({
-            title: '查看库存',
-            width: 900,
-            height: 560,
-            children: [storagegrid],
-            childContainer: '.bui-stdmod-body',
-            buttons: [
-                {
-                    text: '关闭',
-                    elCls: 'button button-primary',
                     handler: function () {
                         this.close();
                     }
@@ -361,36 +344,58 @@
             $("#action").val("出库");
             $("#amount").val("");
         });
-        //响应查看库存按钮
-        $('#btnStorage').on('click', function () {
-            storagedialog.show();
-            storagestore.load();
-        });
         </script>
         <!-- script end -->
         <script type="text/javascript">
             $(document).ready(function () {
-                $('#detail_name').html('<a style="font-size:30px;bold;"><?php echo $_GET["name"];?>的详细记录</a>')
-            
-            $('#date').val(GetDateStr(0));
-            $('#syear, #smonth').on('change', function () {
-                detailstore.load({
-                    "name": '<?php echo ($name); ?>',
-                    "year": $('#syear').val(),
-                    "month": $('#smonth').val()
+                $('#detail_name').html('<a style="font-size:30px;bold;"><?php echo $_GET["name"];?></a>');            
+                $('#date').val(GetDateStr(0));
+                $('#syear, #smonth').on('change', function () {
+                    detailstore.load({
+                        "name": '<?php echo ($name); ?>',
+                        "year": $('#syear').val(),
+                        "month": $('#smonth').val()
+                    });
                 });
             });
-        });
         </script>
         <script type="text/javascript">
             function GetDateStr(AddDayCount) {
-            var dd = new Date();
-            dd.setDate(dd.getDate() + AddDayCount);//获取AddDayCount天后的日期
-            var y = dd.getFullYear();
-            var m = dd.getMonth() + 1;//获取当前月份的日期
-            var d = dd.getDate();
-            return y + "-" + m + "-" + d;
-        }
+                var dd = new Date();
+                dd.setDate(dd.getDate() + AddDayCount);//获取AddDayCount天后的日期
+                var y = dd.getFullYear();
+                var m = dd.getMonth() + 1;//获取当前月份的日期
+                var d = dd.getDate();
+                return y + "-" + m + "-" + d;
+            }
+            
+            function delrow(id){
+                BUI.Message.Confirm('确认删除？',function(){
+                    $.ajax({
+                            url: '/PlanB/index.php/Home/Index/delRecord',
+                            data: 'id=' + id,
+                            type: "get",
+                            cache: false,
+                            dataType: 'text',
+                            success: function (data) {
+                                if (data == 0) {
+                                    alert("删除失败");
+                                } else {
+                                    alert("删除成功");
+                                    detailstore.load({
+                                        "name":"<?php echo ($name); ?>",
+                                        "year": $('#syear').val(),
+                                        "month": $('#smonth').val()
+                                    })
+                                }
+                            },
+                            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                // view("异常！");
+                                alert(XMLHttpRequest.status + "\n" + textStatus + "\n" + errorThrown);
+                            }
+                        });
+                });
+            }
         </script>
     </div>
 </body>
